@@ -1,0 +1,5 @@
+#titre-livre {
+    border-top: solid black 1px;
+    border-bottom: solid black 1px;
+    word-wrap: break-word;
+}
