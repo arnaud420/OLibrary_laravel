@@ -12,6 +12,10 @@
   float: left;
 }
 
+#sidenav > #sidenav-wrapper {
+  margin-top: 30px;
+}
+
 #content-wrapper {
   width: 80%;
   height: 966px;

@@ -8,10 +8,7 @@
 <body>
   @yield('sidebar')
   @yield('sidenav')
-  <div id="content-wrapper" class="container">
-    Contenu
-    @yield('content')
-  </div>
+  <div id="content-wrapper" class="container">@yield('content')</div>
   @yield('footer')
   @yield('scripts')
 </body>

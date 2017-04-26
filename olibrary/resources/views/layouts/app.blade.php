@@ -3,6 +3,7 @@
 @section('title', 'Acceuil')
 
 @section('styles')
+  <!-- import default head -->
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
   <link rel="stylesheet" href="css/main.css">
@@ -10,6 +11,7 @@
 @endsection
 
 @section('sidebar')
+  <!-- sidebar -->
   <nav id="sidebar" class="indigo darken-1">
     <div class="nav-wrapper">
       <a href="/" class="brand-logo">OLibrary</a>
@@ -23,12 +25,16 @@
 @endsection
 
 @section('sidenav')
-  <div id="sidenav" class="indigo lighten-5">
-    Sidenav
+  <!-- sidenav -->
+  <div id="sidenav" class="indigo lighten-3">
+    <div id="sidenav-wrapper" class="container">
+      Sidenav
+    </div>
   </div>
 @endsection
 
 @section('footer')
+  <!-- default footer section -->
   <footer class="page-footer indigo darken-1">
     <div class="container">
       <div class="row">
@@ -57,6 +63,7 @@
 @endsection
 
 @section('scripts')
+  <!-- Import scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 @endsection
