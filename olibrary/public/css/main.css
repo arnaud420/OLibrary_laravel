@@ -18,3 +18,52 @@
   float: right;
   background-color: aliceblue;
 }
+#sidenav ul {
+  margin: 0;
+}
+#sidenavImg {
+  width: 100%;
+  height: 150px;
+}
+#sidenav #listImg {
+  height: 100%;
+  margin: 0;
+  border: 2px solid black;
+}
+#sidenavImg img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 30px;
+}
+@media all and (max-width: 966px)
+{
+  #content-wrapper
+  {
+    width: 100%;
+  }
+}
+#sideLink ul li {
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+}
+#sideLink ul li a {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1.2em;
+}
+#sideLink ul li a:hover {
+  color: white;
+  background-color: #3949ab;
+}
+#sidenavRadio p{
+  font-size: 1.3em;
+}
+#sidenavRadioCheckbox {
+  width: 50%;
+  margin: 0 auto;
+}

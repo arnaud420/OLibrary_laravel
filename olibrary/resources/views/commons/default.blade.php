@@ -8,7 +8,7 @@
 <body>
   @yield('sidebar')
   @yield('sidenav')
-  <div id="content-wrapper" class="container">
+  <div id="content-wrapper">
     Contenu
     @yield('content')
   </div>

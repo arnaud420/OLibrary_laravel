@@ -8,7 +8,7 @@
 <body>
   <?php echo $__env->yieldContent('sidebar'); ?>
   <?php echo $__env->yieldContent('sidenav'); ?>
-  <div id="content-wrapper" class="container">
+  <div id="content-wrapper">
     Contenu
     <?php echo $__env->yieldContent('content'); ?>
   </div>
