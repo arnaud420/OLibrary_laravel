@@ -4,7 +4,7 @@
 #bookResume, #bookTitle {
     word-wrap: break-word;
 }
-@media all and (max-width: 966px)
+@media all and (max-width: 1024px)
 {
     #bookCard
     {
