@@ -12,5 +12,9 @@
 */
 
 Route::resource('/', 'ArtworkController', ['only' => 'index']);
-Route::get('/login', 'LoginController@index');
-Route::post('/login', 'LoginController@login');
+// Route::get('/login', 'LoginController@index');
+// Route::post('/login', 'LoginController@login');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

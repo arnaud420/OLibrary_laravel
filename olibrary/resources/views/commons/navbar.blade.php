@@ -5,6 +5,7 @@
       <li><a href="#">Profil</a></li>
       <li><a href="#">Emprunts</a></li>
       <li><a href="#">Catalogue</a></li>
+      <li><a href="/login">Connexion</a></li>
     </ul>
   </div>
 </nav>
