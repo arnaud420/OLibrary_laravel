@@ -26,3 +26,14 @@ main {
   float: right;
   background-color: aliceblue;
 }
+@media all and (max-width: 966px)
+{
+  #content-wrapper
+  {
+    width: 100%;
+  }
+  #sidenav
+  {
+    display: none;
+  }
+}
