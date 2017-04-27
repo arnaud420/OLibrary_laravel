@@ -30,6 +30,12 @@
       </div>
       @endforeach
     </div>
+
+    <div class="row">
+      <div class="center-align">
+        {!! $artworks->render() !!}
+      </div>
+    </div>
 @endsection
 
 @section('scripts')
