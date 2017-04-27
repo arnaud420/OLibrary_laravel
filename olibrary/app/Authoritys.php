@@ -13,4 +13,12 @@ class Authoritys extends Model
     'created_at',
     'updated_at'
   ];
+
+  public function artworks() {
+    return $this->hasMany('App\Artworks');
+  }
+
+  public function familyAuthority() {
+    return $this->belongsTo('App\FamilyAuthority');
+  }
 }

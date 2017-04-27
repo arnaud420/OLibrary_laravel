@@ -1,20 +1,28 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
 #sidebar {
   width: 100%;
 }
 
-#sidebar .brand-logo {
+#navbar .brand-logo {
   margin-left: 10px;
 }
 
 #sidenav {
   width: 20%;
-  height: 966px;
   float: left;
 }
 
 #content-wrapper {
   width: 80%;
-  height: 966px;
   float: right;
   background-color: aliceblue;
 }

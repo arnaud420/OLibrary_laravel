@@ -11,4 +11,8 @@ class FamilyAuthority extends Model
     'created_at',
     'updated_at'
   ];
+
+  public function authoritys() {
+    return $this->hasMany('App\Authoritys');
+  }
 }

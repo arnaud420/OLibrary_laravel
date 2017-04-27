@@ -10,4 +10,8 @@ class Types extends Model
     'type_name',
     'type_theme'
   ];
+
+  public function artworks() {
+    return $this->hasMany('App\Artworks');
+  }
 }

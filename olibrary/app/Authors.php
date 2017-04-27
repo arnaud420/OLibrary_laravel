@@ -14,4 +14,8 @@ class Authors extends Model
     'created_at',
     'updated_at'
   ];
+
+  public function artworks() {
+    return $this->hasMany('App\Artworks');
+  }
 }

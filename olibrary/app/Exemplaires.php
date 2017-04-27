@@ -12,4 +12,8 @@ class Exemplaires extends Model
     'created_at',
     'updated_at'
   ];
+
+  public function artwork() {
+    return $this->belongsTo('App\Artworks');
+  }
 }

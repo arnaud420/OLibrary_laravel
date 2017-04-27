@@ -6,13 +6,14 @@
   @yield('styles')
 </head>
 <body>
-  @yield('sidebar')
-  @yield('sidenav')
-  <div id="content-wrapper" class="container">
-    Contenu
-    @yield('content')
-  </div>
-  @yield('footer')
+  <header>@include('commons.navbar')</header>
+  <main>
+    @include('commons.sidenav')
+    <div id="content-wrapper" class="container">
+      @yield('content')
+    </div>
+  </main>
+  @include('commons.footer')
   @yield('scripts')
 </body>
 </html>

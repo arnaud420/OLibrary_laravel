@@ -14,5 +14,20 @@ class Artworks extends Model
     'created_at',
     'updated_at'
   ];
-    //
+
+  public function author() {
+    return $this->belongsTo('App\Authors');
+  }
+
+  public function type() {
+    return $this->belongsTo('App\Types');
+  }
+
+  public function authority() {
+    return $this->belongsTo('App\Authoritys');
+  }
+
+  public function exemplaires() {
+    return $this->hasMany('App\Exemplaires');
+  }
 }
