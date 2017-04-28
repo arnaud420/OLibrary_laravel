@@ -11,9 +11,6 @@
 @endsection
 
 @section('content')
-  @if(Auth::check())
-    <p>salut c moi</p>
-  @endif
   <h1>Hello!</h1>
 @endsection
 

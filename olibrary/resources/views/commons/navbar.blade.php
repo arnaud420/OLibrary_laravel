@@ -5,7 +5,12 @@
       <li><a href="#">Profil</a></li>
       <li><a href="#">Emprunts</a></li>
       <li><a href="#">Catalogue</a></li>
-      <li><a href="/login">Connexion</a></li>
+      @if(!Auth::check())
+        <li><a href="/login">Connexion</a></li>
+        <li><a href="/register">Inscription</a></li>
+      @else
+        <li><a href="/logout">Deconnexion</a></li>
+      @endif
     </ul>
   </div>
 </nav>

@@ -8,16 +8,10 @@ use Barryvdh\Debugbar\Facade as Debugbar;
 
 class LoginController extends Controller
 {
-  public function index() {
-    Debugbar::info(Auth::check());
+  public function logout() {
     if (Auth::check()) {
-      return redirect('/');
-    } else {
-      return view('user.login');
+      Auth::logout();
     }
-  }
-
-  public function login(Request $request) {
-    Debugbar::info($request);
+    return redirect('/');
   }
 }
