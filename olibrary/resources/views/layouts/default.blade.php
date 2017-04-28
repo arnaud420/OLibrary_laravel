@@ -12,7 +12,7 @@
 
 @section('content')
   @if(Auth::check())
-    <p>logged in</p>
+    <p>salut c moi</p>
   @endif
   <h1>Hello!</h1>
 @endsection
