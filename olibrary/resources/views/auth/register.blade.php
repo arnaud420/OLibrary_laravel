@@ -7,8 +7,14 @@
           {{ csrf_field() }}
           <div class="row">
             <div class="input-field col s12">
-              <input id="register_name" type="text" class="validate" name="name" required autofocus>
-              <label for="register_name">Name</label>
+              <input id="register_firstname" type="text" class="validate" name="first_name" required autofocus>
+              <label for="register_firstname">First Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="register_lastname" type="text" class="validate" name="last_name" required autofocus>
+              <label for="register_lastname">Last Name</label>
             </div>
           </div>
           <div class="row">
