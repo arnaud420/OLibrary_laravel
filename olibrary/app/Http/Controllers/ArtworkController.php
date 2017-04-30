@@ -16,7 +16,7 @@ class ArtworkController extends Controller
     {
       $artworks = Artworks::paginate(12);
       $artworks->load('author');
-      return view('layouts.app', ['artworks' => $artworks]);
+      return view('layouts.default', ['artworks' => $artworks]);
     }
 
     /**
