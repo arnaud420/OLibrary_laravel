@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     'address' => $faker->address,
     'postal_code' => $faker->postcode,
     'city' => $faker->city,
-    'picture_path' => 'uploads/default.png',
+    'picture_path' => '/uploads/default.png',
     'remember_token' => str_random(10),
   ];
 });

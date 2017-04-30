@@ -1,22 +1,24 @@
-@extends('layouts.default')
+@extends('commons.default')
 
 @section('title', 'Profile')
 
 @section('styles')
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
-  <link rel="stylesheet" href="../css/main.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+  <link rel="stylesheet" href="/css/main.css">
 @endsection
 
 @section('content')
   <h1>Profile</h1>
-  {{ $user }}
+  <p>Firstname: {{ $user->first_name }}</p>
+  <p>Lastname: {{ $user->last_name }}</p>
+  <p>Email: {{ $user->email }}</p>
+  <p>Phone: {{ $user->phone }}</p>
+  <p>Address: {{ $user->address }}</p>
+  <p>City: {{ $user->city }}</p>
+  <p>Postal code: {{ $user->postal_code }}</p>
+  <p>picture_path: {{ $user->picture_path }}</p>
 @endsection
 
 @section('scripts')
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 @endsection
 

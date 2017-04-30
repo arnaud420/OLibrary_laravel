@@ -1,20 +1,23 @@
 <!-- debut de la sidenav  -->
 <div id="sidenav" class="indigo lighten-5 hide-on-med-and-down">
-  <div id="sidenavImg">
-    <ul id="listImg">
-      <li><img src=""></li>
-      <li style="margin-top: 60px;">Nom, Prenom</li>
-    </ul>
-  </div>
-  <!-- liens naviguation  -->
-  <div id="sideLink">
-    <ul>
-      <li><a href="#" class="waves-effect center-align valign-wrapper">Catalogue</a></li>
-      <li><a href="#" class="waves-effect center-align">Espace Personnel</a></li>
-      <li><a href="#" class="waves-effect center-align">Emprunts</a></li>
-      <li><a href="#" class="waves-effect center-align">Déconnexion</a></li>
-    </ul>
-  </div>
+
+  @if(Auth::check())
+    <div id="sidenavImg">
+      <ul id="listImg">
+        <li><img src="{{ Auth::user()->picture_path }}"></li>
+        <li style="margin-top: 60px;">Bonjour, {{ Auth::user()->first_name }}</li>
+      </ul>
+    </div>
+    <!-- liens naviguation  -->
+    <div id="sideLink">
+      <ul>
+        <li><a href="#" class="waves-effect center-align valign-wrapper">Catalogue</a></li>
+        <li><a href="/user/{{ Auth::user()->id }}" class="waves-effect center-align">Espace Personnel</a></li>
+        <li><a href="#" class="waves-effect center-align">Emprunts</a></li>
+        <li><a href="/logout" class="waves-effect center-align">Déconnexion</a></li>
+      </ul>
+    </div>
+  @endif
 
   <!-- partie checkbox + radiobutton  -->
   <div id="sidenavRadioCheckbox">
