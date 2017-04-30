@@ -1,4 +1,5 @@
 input[type=email]:focus:not([readonly])+label,
+input[type=text]:focus:not([readonly])+label,
 input[type=password]:focus:not([readonly])+label {
   color: #3949ab;
 }
@@ -15,4 +16,5 @@ input[type=password]:focus:not([readonly])+label {
 
 #modal-register {
   background-color: white;
+  color: black;
 }

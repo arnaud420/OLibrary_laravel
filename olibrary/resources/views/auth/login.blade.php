@@ -7,13 +7,13 @@
           {{ csrf_field() }}
           <div class="row">
             <div class="input-field col s12">
-              <input id="login_email" type="email" class="validate" name="email">
+              <input id="login_email" type="email" class="validate" name="email" required autofocus>
               <label for="login_email">Adresse email</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="login_password" type="password" class="validate" name="password">
+              <input id="login_password" type="password" class="validate" name="password" required autofocus>
               <label for="login_password">Mot de passe</label>
             </div>
           </div>
