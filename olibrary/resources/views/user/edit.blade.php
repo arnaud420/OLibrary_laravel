@@ -15,13 +15,13 @@
                {!! Form::open(['route' => ['user.update', $user, 'novalidate' => 'novalidate',  'files' => true]]) !!}
 
                <div class="input-field col s6">
-                   {!! Form::label('nom', 'Nom : ') !!}
-                   {!! Form::text('nom', null) !!}
+                   {!! Form::label('last_name', 'Nom : ') !!}
+                   {!! Form::text('last_name', null) !!}
                </div>
 
                <div class="input-field col s6">
-                   {!! Form::label('prenom', 'Prenom : ') !!}
-                   {!! Form::text('prenom', null) !!}
+                   {!! Form::label('first_name', 'Prenom : ') !!}
+                   {!! Form::text('first_name', null) !!}
                </div>
 
                <div class="input-field col s6">
@@ -30,28 +30,28 @@
                </div>
 
                <div class="input-field col s6">
-                   {!! Form::label('tel', 'Téléphone : ') !!}
-                   {!! Form::number('tel', null) !!}
+                   {!! Form::label('phone', 'Téléphone : ') !!}
+                   {!! Form::number('phone', null) !!}
                </div>
 
                <div class="input-field col s12">
-                   {!! Form::label('adresse', 'Adresse : ') !!}
-                   {!! Form::text('adresse', null) !!}
+                   {!! Form::label('address', 'Adresse : ') !!}
+                   {!! Form::text('address', null) !!}
                </div>
 
                <div class="input-field col s6">
-                   {!! Form::label('ville', 'Ville : ') !!}
-                   {!! Form::text('ville', null) !!}
+                   {!! Form::label('city', 'Ville : ') !!}
+                   {!! Form::text('city', null) !!}
                </div>
 
                <div class="input-field col s6">
-                   {!! Form::label('code', 'Code postal : ') !!}
-                   {!! Form::number('code', null) !!}
+                   {!! Form::label('postal_code', 'Code postal : ') !!}
+                   {!! Form::number('postal_code', null) !!}
                </div>
 
                <div class="input-field col s6">
-                   {!! Form::label('avatar', 'Avatar :') !!}
-                   {!! Form::file('avatar', null) !!}
+                   {!! Form::label('picture_path', 'Avatar :') !!}
+                   {!! Form::file('picture_path', null) !!}
                </div>
 
                <div class="col s12">
