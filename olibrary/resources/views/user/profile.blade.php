@@ -17,6 +17,10 @@
   <p>City: {{ $user->city }}</p>
   <p>Postal code: {{ $user->postal_code }}</p>
   <p>picture_path: {{ $user->picture_path }}</p>
+
+  <div class="row center">
+    <a class="waves-effect waves-light btn-large red" href="{{route('user.edit', compact('user'))}}">Modifier le profil</a>
+  </div>
 @endsection
 
 @section('scripts')

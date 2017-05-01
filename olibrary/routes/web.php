@@ -16,3 +16,4 @@ Route::resource('/', 'ArtworkController', ['only' => 'index']);
 Auth::routes();
 Route::get('/logout', 'LoginController@logout');
 Route::get('/user/{id}', 'UserController@index');
+Route::get('/user/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'user.edit']);
