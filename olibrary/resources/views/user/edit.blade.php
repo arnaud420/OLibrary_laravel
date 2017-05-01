@@ -55,7 +55,7 @@
                </div>
 
                <div class="col s12">
-                   {!! Form::submit('Modifier', ['class' => 'btn large right red']) !!}
+                   {!! Form::submit('Modifier', ['class' => 'waves-effect waves-light btn-large red right']) !!}
                </div>
                {!! Form::close() !!}
        </div>
