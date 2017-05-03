@@ -11,7 +11,7 @@
     <!-- liens naviguation  -->
     <div id="sideLink">
       <ul>
-        <li><a href="#" class="waves-effect center-align valign-wrapper">Catalogue</a></li>
+        <li><a href="{{route('artworks.index')}}" class="waves-effect center-align valign-wrapper">Catalogue</a></li>
         <li><a href="/user/{{ Auth::user()->id }}" class="waves-effect center-align">Espace Personnel</a></li>
         <li><a href="#" class="waves-effect center-align">Emprunts</a></li>
         <li><a href="/logout" class="waves-effect center-align">Déconnexion</a></li>

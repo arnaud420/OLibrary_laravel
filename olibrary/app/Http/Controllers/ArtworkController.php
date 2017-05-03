@@ -49,7 +49,9 @@ class ArtworkController extends Controller
     public function show($id)
     {
         $artwork = Artworks::findOrFail($id);
-        return view('artworks.show', compact('artwork'));
+        $artwork->load('author');
+        //$exemplaire = $artwork->exemplaires()->get();
+        return view('artworks.show', compact('artwork', 'exemplaire'));
     }
 
     /**

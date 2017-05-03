@@ -15,3 +15,30 @@
     text-decoration: underline;
     color: grey;
 }
+#bookLink {
+    color: black;
+}
+#bookLink:hover {
+    color: #3949ab;
+}
+#artDiv {
+    border: 1px solid black;
+    padding: 15px 30px 15px 30px;
+}
+#artImg {
+    margin-right: 25px;
+}
+#artTitle {
+    margin-left: 20px;
+}
+#artInfo {
+    border: 1px solid black;
+    margin-left: 10px;
+    margin-top: 20px;
+    word-wrap: break-word;
+}
+#artdispo {
+    background-color: red;
+    height: 100px;
+    width: 100px;
+}
