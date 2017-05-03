@@ -2,11 +2,6 @@
 
 @section('title', 'Profile')
 
-@section('styles')
-  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="/css/main.css">
-@endsection
-
 @section('content')
   <h1 class="center">Profile</h1>
 
@@ -31,8 +26,5 @@
   <div class="row center">
     <a class="waves-effect waves-light btn-large red" href="{{route('user.edit', compact('user'))}}">Modifier le profil</a>
   </div>
-@endsection
-
-@section('scripts')
 @endsection
 

@@ -2,11 +2,6 @@
 
 @section('title', 'Profile')
 
-@section('styles')
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/main.css">
-@endsection
-
 @section('content')
     <h1 class="center">Edition du profile</h1>
 
@@ -60,7 +55,4 @@
                {!! Form::close() !!}
        </div>
     </div>
-@endsection
-
-@section('scripts')
 @endsection

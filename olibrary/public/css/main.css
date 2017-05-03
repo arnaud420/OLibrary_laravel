@@ -50,7 +50,7 @@ main {
 #sidenav #listImg {
   height: 100%;
   margin: 0;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 #sidenavImg img {
   width: 80px;
