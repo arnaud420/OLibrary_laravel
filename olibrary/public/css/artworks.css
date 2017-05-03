@@ -42,3 +42,19 @@
     height: 100px;
     width: 100px;
 }
+@media all and (max-width: 700px)
+{
+    #artImg
+    {
+        margin-left: 15px;
+        margin-bottom: 10px;
+    }
+    #artTitle
+    {
+        margin: 0;
+    }
+    .stars
+    {
+        margin-left: 50px;
+    }
+}

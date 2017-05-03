@@ -53,7 +53,7 @@
                 </select>
                 <label>Quantité</label>
             </div>
-            <a class="waves-effect waves-light btn-large">Emprunter</a>
+            <a class="waves-effect waves-light btn-large" id="artBtn">Emprunter</a>
         </div>
     </div>
 @endsection
