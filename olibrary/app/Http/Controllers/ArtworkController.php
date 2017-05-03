@@ -48,7 +48,8 @@ class ArtworkController extends Controller
      */
     public function show($id)
     {
-        //
+        $artwork = Artworks::findOrFail($id);
+        return view('artworks.show', compact('artwork'));
     }
 
     /**

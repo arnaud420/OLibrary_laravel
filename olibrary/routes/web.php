@@ -11,7 +11,8 @@
 |
 */
 
-Route::resource('/', 'ArtworkController', ['only' => 'index']);
+//Routes artwork
+Route::resource('artworks', 'ArtworkController');
 
 Auth::routes();
 Route::get('/logout', 'LoginController@logout');
