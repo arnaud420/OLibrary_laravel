@@ -46,7 +46,7 @@
 
     <div class="row">
         <div class="center-align">
-            {!! $users->render() !!}
+            {!! $users->links() !!}
         </div>
     </div>
 @endsection
