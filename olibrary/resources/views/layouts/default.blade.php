@@ -9,7 +9,7 @@
 @section('content')
   <div class="row">
     @foreach($artworks as $artwork)
-      <div class="col s12 m3 l2">
+      <div class="col s12 m4 l3">
         <div class="card hoverable" id="bookCard">
           <div class="card-image waves-effect waves-block waves-light" id="imgContent">
             <img id="bookImg" class="activator responsive-img" src="http://lelivrequifaitdireoui.quebec/resources/livre.png">
@@ -36,8 +36,6 @@
 
 @section('scripts')
 <script>
-    $(document).ready(function(){
 
-    });
 </script>
 @endsection
