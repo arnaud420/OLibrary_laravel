@@ -9,7 +9,7 @@
 @section('content')
     <div class="row">
         <div class="col s12">
-            <h2 class="center">Liste des utilisateurs</h2>
+            <h2 class="center indigo darken-2 white-text">Liste des utilisateurs</h2>
         </div>
     </div>
 
@@ -18,10 +18,11 @@
             <table class="striped centered responsive-table">
                 <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Email</th>
-                    <th>Modifier</th>
+                    <th>Profil</th>
                     <th>Supprimer</th>
                 </tr>
                 </thead>
@@ -29,10 +30,11 @@
                 <tbody>
                 @foreach($users as $user)
                 <tr>
+                    <td>{{$user->id}}</td>
                     <td>{{$user->last_name}}</td>
                     <td>{{$user->first_name}}</td>
                     <td>{{$user->email}}</td>
-                    <td><a class="waves-effect waves-light btn orange">modifier</a></td>
+                    <td><a class="waves-effect waves-light btn orange" href="{{route('adminusers.show', $user->id)}}">profil</a></td>
                     <td>{!! Form::open(['method' => 'DELETE', 'route' => ['adminusers.destroy', $user->id]]) !!}
                             {!! Form::submit('Supprimer', ['class' => 'waves-effect waves-light btn red', 'onclick' => 'return confirm(\'Voulez-vous vraiment supprimer cet utilisateur ?\')']) !!}
                         {!! Form::close() !!}

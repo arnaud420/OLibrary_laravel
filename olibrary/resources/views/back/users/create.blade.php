@@ -3,7 +3,7 @@
 @section('title', 'Back Admin - ajout utilisateur')
 
 @section('content')
-    <h1 class="center">Ajout d'utilisateur</h1>
+    <h2 class="center grey white-text">Ajout d'utilisateur</h2>
 
     <div class="row">
         <div class="col s12 m8 offset-m2">

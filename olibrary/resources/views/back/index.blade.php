@@ -9,7 +9,7 @@
 @section('content')
     <div class="row">
         <div class="col s12">
-            <h2 class="center">Espace Admin</h2>
+            <h2 class="center indigo darken-2 white-text">Espace Admin</h2>
         </div>
     </div>
 

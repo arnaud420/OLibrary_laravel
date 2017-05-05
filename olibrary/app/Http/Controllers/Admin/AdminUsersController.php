@@ -52,7 +52,8 @@ class AdminUsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('back.users.show', compact('user'));
     }
 
     /**
@@ -63,7 +64,8 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('back.users.edit', compact('user'));
     }
 
     /**
@@ -75,7 +77,18 @@ class AdminUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $input = $request->all();
+        $user = User::findOrFail($id);
+        $user_update = $user->update($input);
+
+        if ($user_update)
+        {
+            return redirect('admin/users/{id}');
+        }
+        else
+        {
+            return redirect()->back();
+        }
     }
 
     /**
