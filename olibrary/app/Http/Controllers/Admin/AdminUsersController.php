@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\UserEditRequest;
 use App\User;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -41,7 +42,7 @@ class AdminUsersController extends Controller
         $input = $request->all();
         User::create($input);
 
-        return redirect(route("adminusers.index"))->withOk("success", "l'utilisateur a ete cree");
+        return redirect(route("adminusers.create"))->with("success", "l'utilisateur a ete cree");
     }
 
     /**

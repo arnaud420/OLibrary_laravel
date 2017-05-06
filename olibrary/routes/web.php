@@ -26,4 +26,5 @@ Route::post('/user/{id}/edit', ['uses' => 'UserController@update', 'as' => 'user
 Route::group(['as' => 'admin'], function () {
     Route::get('admin', 'Admin\AdminController@index');
     Route::resource('admin/users', 'Admin\AdminUsersController');
+    Route::resource('admin/artworks', 'Admin\AdminArtworksController');
 });

@@ -50,10 +50,19 @@
     </div>
 
     <div class="row">
-        <li class="collection-item valign-wrapper">
-            <a href="#"><i class="material-icons large valign">book</i></a>
-            <span>Oeuvres</span>
-        </li>
+        <div class="col s12 m4 l2">
+            <li class="collection-item valign-wrapper">
+                <a href="{{route('adminartworks.index')}}"><i class="material-icons large valign">book</i></a>
+                <span>Oeuvres</span>
+            </li>
+        </div>
+
+        <div class="col s12 m4 l2">
+            <li class="collection-item valign-wrapper">
+                <a href="{{route('adminartworks.create')}}"><i class="material-icons large valign">add</i></a>
+                <span>Ajouter une oeuvre</span>
+            </li>
+        </div>
     </div>
 
     <div class="row">

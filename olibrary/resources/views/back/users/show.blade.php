@@ -13,13 +13,13 @@
        <div class="col s12 grey darken-3 white-text valign-wrapper">
            <div class="row col s12" style="padding: 25px 25px 25px 25px">
                <div id="divShowUser">
-                   <img src="" class="hide-on-med-and-up valign center" style="height: 200px; width: 200px;">
+                   <img src="{{$user->picture_path}}" class="hide-on-med-and-up valign center" style="height: 200px; width: 200px;">
 
-                   <img src="" class="left hide-on-small-and-down" style="height: 200px; width: 200px; margin-right: 15px">
+                   <img src="{{$user->picture_path}}" class="left hide-on-small-and-down" style="height: 200px; width: 200px; margin-right: 15px">
                    <p>Nom : {{$user->first_name}}</p>
                    <p>Prénom : {{$user->last_name}}</p>
                    <p>Email : {{$user->email}}</p>
-                   <p>Adresse : {{$user->address}}, {{$user->postal_code}}, {{$user->city}}</p>
+                   <p>Adresse : {{$user->address}} {{$user->postal_code}} {{$user->city}}</p>
                    <p><a class="waves-effect waves-light btn red" href="{{route('adminusers.edit', $user->id)}}">Modifier</a></p>
                </div>
            </div>
