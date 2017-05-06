@@ -10,7 +10,7 @@
 
     <div class="row">
         <div class="col s12">
-            {!! Form::open(['route' => ['user.update', $user]]) !!}
+            {!! Form::open(['route' => ['adminusers.update', $user->id], 'method' => 'put']) !!}
 
             <div class="input-field col m6 s12">
                 {!! Form::label('last_name', '* Nom : ') !!}
