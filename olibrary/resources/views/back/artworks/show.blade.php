@@ -10,7 +10,7 @@
     <h2 class="center indigo darken-1 white-text">Oeuvre</h2>
 
     <div class="row">
-        <div class="col s12 grey darken-3 white-text valign-wrapper">
+        <div class="col s12 grey darken-3 white-text valign-wrapper card-panel">
             <div class="row col s12">
                 <h3 class="center white-text">{{$artwork->artwork_title}}</h3>
                 <div id="divShowUser">

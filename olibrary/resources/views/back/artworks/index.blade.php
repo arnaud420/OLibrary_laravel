@@ -1,6 +1,6 @@
 @extends('commons.default')
 
-@section('title', 'Back Admin - users')
+@section('title', 'Back Admin - artworks')
 
 @section('styles')
     <link rel="stylesheet" href="/css/admin.css">

@@ -10,10 +10,10 @@
     <h2 class="center indigo darken-1 white-text">Profil utilisateur</h2>
 
     <div class="row">
-       <div class="col s12 grey darken-3 white-text valign-wrapper">
+       <div class="col s12 grey darken-3 white-text valign-wrapper card-panel">
            <div class="row col s12" style="padding: 25px 25px 25px 25px">
                <div id="divShowUser">
-                   <img src="{{$user->picture_path}}" class="hide-on-med-and-up valign center" style="height: 200px; width: 200px;">
+                   <img src="{{$user->picture_path}}" class="hide-on-med-and-up valign center" style="height: 150px; width: 150px;">
 
                    <img src="{{$user->picture_path}}" class="left hide-on-small-and-down" style="height: 200px; width: 200px; margin-right: 15px">
                    <p>Nom : {{$user->first_name}}</p>
