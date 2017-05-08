@@ -24,7 +24,7 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
     'address' => $faker->address,
     'postal_code' => $faker->postcode,
     'city' => $faker->city,
-    'picture_path' => '/uploads/default.png',
+    'picture_path' => $faker->imageUrl($width = 100, $height = 300),
     'remember_token' => str_random(10),
   ];
 });
@@ -56,7 +56,7 @@ $factory->define(App\Authoritys::class, function(Faker\Generator $faker) {
     'authority_name' => $faker->company,
     'authority_email' => $faker->unique()->safeEmail,
     'authority_phone' => $faker->phoneNumber,
-    'family_id' => function() {
+    'families_id' => function() {
       return factory(App\FamilyAuthority::class)->create()->id;
     }
   ];
@@ -68,13 +68,10 @@ $factory->define(App\Artworks::class, function(Faker\Generator $faker) {
     'artwork_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
     'resume' => $faker->realText($maxNbChars = 200, $indexSize = 2),
     'collection' => $faker->word,
-    'author_id' => function() {
-      return factory(App\Authors::class)->create()->id;
-    },
-    'type_id' => function() {
+    'types_id' => function() {
       return factory(App\Types::class)->create()->id;
     },
-    'authority_id' => function() {
+    'authorities_id' => function() {
       return factory(App\Authoritys::class)->create()->id;
     }
   ];
@@ -83,9 +80,6 @@ $factory->define(App\Artworks::class, function(Faker\Generator $faker) {
 $factory->define(App\Exemplaires::class, function(Faker\Generator $faker) {
   return [
     'exemplaire_quantity' => $faker->randomDigitNotNull,
-    'exemplaire_picture_path' => 'uploads/default.png',
-    'artwork_id' => function() {
-      return factory(App\Artworks::class)->create()->id;
-    }
+    'exemplaire_picture_path' => $faker->imageUrl($width = 100, $height = 300),
   ];
 });

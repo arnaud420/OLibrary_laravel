@@ -20,8 +20,8 @@ class CreateAuthoritysTable extends Migration
         $table->string('authority_name');
         $table->string('authority_email')->unique();
         $table->string('authority_phone');
-        $table->integer('family_id')->unsigned();
-        $table->foreign('family_id')->references('id')->on('family_authorities')
+        $table->integer('families_id')->unsigned();
+        $table->foreign('families_id')->references('id')->on('family_authorities')
           ->onDelete('cascade')->onUpdate('cascade');
         $table->timestamps();
       });

@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FamilyAuthority extends Model
 {
+  protected $table = 'family_authorities';
   protected $fillable = [
     'family_name',
     'created_at',

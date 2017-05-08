@@ -21,14 +21,14 @@ class CreateArtworksTable extends Migration
         $table->date('artwork_date');
         $table->text('resume');
         $table->string('collection');
-        $table->integer('author_id')->unsigned();
-        $table->foreign('author_id')->references('id')->on('authors')
+        $table->integer('authors_id')->unsigned();
+        $table->foreign('authors_id')->references('id')->on('authors')
           ->onDelete('cascade')->onUpdate('cascade');
-        $table->integer('type_id')->unsigned();
-        $table->foreign('type_id')->references('id')->on('types')
+        $table->integer('types_id')->unsigned();
+        $table->foreign('types_id')->references('id')->on('types')
           ->onDelete('cascade')->onUpdate('cascade');
-        $table->integer('authority_id')->unsigned();
-        $table->foreign('authority_id')->references('id')->on('authoritys')
+        $table->integer('authorities_id')->unsigned();
+        $table->foreign('authorities_id')->references('id')->on('authoritys')
           ->onDelete('cascade')->onUpdate('cascade');
         $table->timestamps();
       });
