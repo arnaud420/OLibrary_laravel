@@ -12,6 +12,7 @@
     <li><div class="divider"></div></li>
     <li><a class="waves-effect" href="#">Emprunts</a></li>
     <li><a class="waves-effect" href="/artworks">Catalogue</a></li>
+    <li><a class="waves-effect" href="/logout">Deconnexion</a></li>
   @else
     <li><a href="/login"><i class="material-icons">cloud</i>Connexion</a></li>
     <li><a href="/register">Inscription</a></li>
