@@ -2,9 +2,6 @@
 <ul id="slide-out" class="side-nav">
   @if(Auth::check())
     <li id="sidenav-profil"><div class="userView">
-      <!-- <div class="background"> -->
-      <!--   <img src="images/office.jpg"> -->
-      <!-- </div> -->
       <a href="/user/{{ Auth::user()->id }}"><img class="circle" src="{{ Auth::user()->picture_path }}"></a>
       <a href="#!name"><span class="black-text name">{{ Auth::user()->first_name }}</span></a>
       <a href="#!email"><span class="black-text email">{{ Auth::user()->email }}</span></a>

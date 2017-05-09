@@ -26,7 +26,7 @@
   width: 100px;
 }
 
-@media all and (max-width: 700px)
+@media all and (max-width: 900px)
 {
   #artImg
   {
@@ -88,7 +88,7 @@
   transform: translateY(-50%);
 }
 
-@media all and (max-width: 700px)
+@media all and (max-width: 900px)
 {
   .artwork-card {
     flex-basis: 49%;

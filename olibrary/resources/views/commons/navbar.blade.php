@@ -1,7 +1,8 @@
 <nav id="navbar" class="indigo darken-1">
   <div class="nav-wrapper">
+    <object id="front-page-logo" class="responsive-img" width="50px" type="image/svg+xml" data="/uploads/assets/open-book.svg"></object>
     <a href="/" class="brand-logo">
-      <img id="logo" src="/uploads/assets/open-book.svg">
+      <span id="navbar-title">Olibrary</span>
     </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       @if(!Auth::check())

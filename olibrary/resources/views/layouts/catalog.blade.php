@@ -11,7 +11,7 @@
     <div id="catalog-wrapper">
       @foreach($artworks as $artwork)
         <div id="artwork-{{ $artwork->id }}" class="artwork-card card indigo darken-1">
-          <div class="card-content white-text">
+          <div class="card-content grey-text text-lighten-3">
             <span class="card-title">{{ $artwork->artwork_title }}</span>
             <p class="artwork-resume">{{ $artwork->resume }}</p>
             <p class="artwork-author">{{ $artwork->author->first_name." ".$artwork->author->last_name }}</p>
