@@ -22,3 +22,10 @@ Route::get('/logout', 'LoginController@logout');
 Route::get('/user/{id}', 'UserController@index');
 Route::get('/user/{id}/edit', ['uses' => 'UserController@edit', 'as' => 'user.edit']);
 Route::post('/user/{id}/edit', ['uses' => 'UserController@update', 'as' => 'user.update']);
+
+//Routes admin
+Route::group(['as' => 'admin'], function () {
+    Route::get('admin', 'Admin\AdminController@index');
+    Route::resource('admin/users', 'Admin\AdminUsersController');
+    Route::resource('admin/artworks', 'Admin\AdminArtworksController');
+});
