@@ -10,23 +10,15 @@
                {!! Form::open(['route' => ['user.update', $user, 'novalidate' => 'novalidate',  'files' => true]]) !!}
 
                <div class="input-field col s6">
-                   {!! Form::label('last_name', 'Nom : ') !!}
-                   {!! Form::text('last_name', null) !!}
+                   {!! Form::hidden('last_name', $user->last_name) !!}
                </div>
 
                <div class="input-field col s6">
-                   {!! Form::label('first_name', 'Prenom : ') !!}
-                   {!! Form::text('first_name', null) !!}
+                   {!! Form::hidden('first_name', $user->first_name) !!}
                </div>
 
                <div class="input-field col s6">
-                   {!! Form::label('email', 'Email : ') !!}
-                   {!! Form::email('email', null) !!}
-               </div>
-
-               <div class="input-field col s6">
-                   {!! Form::label('phone', 'Téléphone : ') !!}
-                   {!! Form::number('phone', null) !!}
+                   {!! Form::hidden('email', $user->email) !!}
                </div>
 
                <div class="input-field col s12">
@@ -44,7 +36,12 @@
                    {!! Form::number('postal_code', null) !!}
                </div>
 
-               <div class="input-field col s6">
+               <div class="input-field col s12">
+                   {!! Form::label('phone', 'Téléphone : ') !!}
+                   {!! Form::number('phone', null) !!}
+               </div>
+
+               <div class="input-field col s12">
                    {!! Form::label('picture_path', 'Avatar :') !!}
                    {!! Form::file('picture_path', null) !!}
                </div>

@@ -19,13 +19,13 @@
                     <img src="" class="left hide-on-small-and-down" style="height: 250px; width: 200px; margin-right: 15px">
                     <p>Auteur : {{$artwork->author->last_name}}, {{$artwork->author->first_name}} </p>
                     <p>Date : {{$artwork->artwork_date}}</p>
-                    <p>Editeur : {{$artwork->authority->authority_name}}</p>
-                    <p>Genre : {{$artwork->type->type_name}}</p>
+                    <!-- <p>Editeur : {//{$artwork->authority->authority_name}}</p>
+                    <p>Genre : {//{$artwork->type->type_name}}</p> -->
                     <p>Collection : {{$artwork->collection}}</p>
 
                     <div class="row">
                         <div class="col s12 center">
-                            <p>Quantité disponible : x </p>
+                            <p>Quantité disponible : {//{$artwork->exemplaire->exemplaire_quantity}} </p>
                             <p>Emprunté par : <span>Emprunteur</span> </p>
                         </div>
                     </div>

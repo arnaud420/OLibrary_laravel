@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Artworks;
+use App\Authors;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
@@ -14,6 +15,7 @@ class AdminArtworksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $artworks = Artworks::paginate(6);
@@ -28,7 +30,8 @@ class AdminArtworksController extends Controller
      */
     public function create()
     {
-        return view('back.artworks.create');
+        $authors = Authors::all();
+        return view('back.artworks.create', compact('authors'));
     }
 
     /**
@@ -40,6 +43,8 @@ class AdminArtworksController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
+        Artworks::create($input);
+        return redirect(route("adminartworks.create"))->with("success", "l'oeuvre a ete cree");
     }
 
     /**
@@ -52,10 +57,10 @@ class AdminArtworksController extends Controller
     {
         $artwork = Artworks::findOrFail($id);
         $author = $artwork->load('author');
-        //$exemplaire = $artwork->load('exemplaires');
+        $exemplaire = $artwork->load('exemplaires');
         $type = $artwork->load('type');
         $authority = $artwork->load('authority');
-        return view('back.artworks.show', compact('artwork', 'author', 'type', 'authority'));
+        return view('back.artworks.show', compact('artwork', 'author', 'type', 'authority', 'exemplaire'));
     }
 
     /**

@@ -26,14 +26,14 @@
     <div class="row">
         <div class="col s12 m4 l2">
             <li class="collection-item valign-wrapper">
-                <a href="{{route('adminusers.index')}}"><i class="material-icons large valign">person</i></a>
+                <a href="{{route('adminusers.index')}}"><i class="indigo-text darken-1 material-icons large valign">person</i></a>
                 <span>Utilisateurs</span>
             </li>
         </div>
 
         <div class="col s12 m4 l2">
             <li class="collection-item valign-wrapper">
-                <a href="{{route('adminusers.create')}}"><i class="material-icons large valign">person_add</i></a>
+                <a href="{{route('adminusers.create')}}"><i class="indigo-text darken-1 material-icons large valign">person_add</i></a>
                 <span>Ajout d'utilisateur</span>
             </li>
         </div>
@@ -52,15 +52,20 @@
     <div class="row">
         <div class="col s12 m4 l2">
             <li class="collection-item valign-wrapper">
-                <a href="{{route('adminartworks.index')}}"><i class="material-icons large valign">book</i></a>
+                <a href="{{route('adminartworks.index')}}"><i class="indigo-text darken-1 material-icons large valign">book</i></a>
                 <span>Oeuvres</span>
             </li>
         </div>
 
         <div class="col s12 m4 l2">
             <li class="collection-item valign-wrapper">
-                <a href="{{route('adminartworks.create')}}"><i class="material-icons large valign">add</i></a>
+                <a class='dropdown-button' data-activates='dropdown1' href="#"><i class="indigo-text darken-1 material-icons large valign">add</i></a>
                 <span>Ajouter une oeuvre</span>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a class="indigo-text darken-1" href="{{route('adminauthor.create')}}">Nouvel auteur</a></li>
+                    <li class="divider"></li>
+                    <li><a class="indigo-text darken-1" href="{{route('adminartworks.create')}}">Auteur existant</a></li>
+                </ul>
             </li>
         </div>
     </div>
@@ -77,7 +82,7 @@
 
     <div class="row">
         <li class="collection-item valign-wrapper">
-            <a href="#"><i class="material-icons large valign">group</i></a>
+            <a href="#"><i class="indigo-text darken-1 material-icons large valign">group</i></a>
             <span>Autorités</span>
         </li>
     </div>
