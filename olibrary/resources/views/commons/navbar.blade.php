@@ -1,7 +1,7 @@
 <nav id="navbar" class="indigo darken-1">
   <div class="nav-wrapper">
     <a href="/" class="brand-logo">
-      <img id="logo" src="uploads/open-book.svg">
+      <img id="logo" src="/uploads/assets/open-book.svg">
     </a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       @if(!Auth::check())

@@ -10,7 +10,7 @@
   <div class="container" id="content-wrapper">
     <div class="row" id="artDiv">
       <div class="col s12">
-        <img id="artImg" href="{{ $artwork->exemplaires[0]->exemplaire_picture_path }}" style="height: 200px; width: 200px; float: left;">
+        <img id="artImg" src="{{ $artwork->exemplaires[0]->exemplaire_picture_path }}" style="height: 300px; width: 200px; float: left;">
         <h4 id="artTitle">{{$artwork->artwork_title}}</h4>
         <p>{{$artwork->resume}}</p>
 
