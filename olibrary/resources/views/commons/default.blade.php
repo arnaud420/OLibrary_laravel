@@ -16,9 +16,7 @@
     @include('commons.navbar')
   </header>
   <main>
-    <div id="content-wrapper" class="container">
-      @yield('content')
-    </div>
+    @yield('content')
   </main>
   @include('commons.footer')
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

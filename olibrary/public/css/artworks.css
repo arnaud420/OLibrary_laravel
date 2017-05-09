@@ -1,60 +1,97 @@
-#bookCard {
-    height: 500px;
-}
-#bookResume, #bookTitle {
-    word-wrap: break-word;
-}
-@media all and (max-width: 1024px)
-{
-    #bookCard
-    {
-        height: 550px;
-    }
-}
-#bookAuthor {
-    text-decoration: underline;
-    color: grey;
-}
-#bookLink {
-    color: black;
-}
-#bookLink:hover {
-    color: #3949ab;
-}
+
+/* Artwork card */
 #artDiv {
-    border: 1px solid black;
-    padding: 15px 30px 15px 30px;
+  margin-top: 10%;
+  padding: 15px 30px 15px 30px;
 }
+
 #artImg {
-    margin-right: 25px;
+  margin-right: 25px;
 }
+
 #artTitle {
-    margin-left: 20px;
+  margin-left: 20px;
 }
+
 #artInfo {
-    border: 1px solid black;
-    margin-left: 10px;
-    margin-top: 20px;
-    word-wrap: break-word;
+  border: 1px solid black;
+  margin-left: 10px;
+  margin-top: 20px;
+  word-wrap: break-word;
 }
+
 #artdispo {
-    background-color: red;
-    height: 100px;
-    width: 100px;
+  background-color: red;
+  height: 100px;
+  width: 100px;
 }
+
 @media all and (max-width: 700px)
 {
-    #artImg
-    {
-        margin-left: 15px;
-        margin-bottom: 10px;
-    }
-    #artTitle
-    {
-        margin: 0;
-    }
-    .stars
-    {
-        margin-left: 50px;
-    }
+  #artImg
+  {
+    margin-left: 15px;
+    margin-bottom: 10px;
+  }
+  #artTitle
+  {
+    margin: 0;
+  }
+  .stars
+  {
+    margin-left: 50px;
+  }
+}
+
+/* Catalog */
+.pagination li.active {
+  background-color: #3949ab;
+}
+
+#catalog-wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.artwork-card {
+  flex-basis: 24%;
+  height: 350px;
+  margin: 5px 1px 5px 1px;
+}
+
+.artwork-card .card-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.artwork-card .card-action {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.show-action {
+  opacity: 1 !important;
+}
+
+.artwork-card .artwork-resume {
+  height: 150px;
+  overflow: hidden;
+}
+
+.artwork-card .artwork-author {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-50%);
+}
+
+@media all and (max-width: 700px)
+{
+  .artwork-card {
+    flex-basis: 49%;
+    margin: 5px 1px 5px 1px;
+  }
 }

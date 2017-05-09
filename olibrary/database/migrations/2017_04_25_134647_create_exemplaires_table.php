@@ -17,6 +17,7 @@ class CreateExemplairesTable extends Migration
       Schema::create('exemplaires', function (Blueprint $table) {
         $table->engine = 'InnoDB';
         $table->increments('id');
+        $table->string('exemplaire_name');
         $table->integer('exemplaire_quantity');
         $table->string('exemplaire_picture_path');
         $table->integer('artworks_id')->unsigned();
