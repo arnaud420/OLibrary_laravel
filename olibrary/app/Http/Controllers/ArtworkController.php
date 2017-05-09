@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Authors;
 use App\Artworks;
+use App\Exemplaires;
 
 class ArtworkController extends Controller
 {
@@ -14,8 +16,12 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-      $artworks = Artworks::paginate(12);
+      // $artworks = Artworks::paginate(12);
+      // $artworks->load('author');
+      // $artworks->load('exemplaires');
+      $artworks = Artworks::all();
       $artworks->load('author');
+      $artworks->load('exemplaires');
       return view('layouts.default', ['artworks' => $artworks]);
     }
 

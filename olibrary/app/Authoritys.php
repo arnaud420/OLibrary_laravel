@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Authoritys extends Model
 {
+  protected $table ='authoritys';
   protected $fillable = [
     'authority_name',
     'authority_email',

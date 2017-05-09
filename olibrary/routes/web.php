@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/', 'LoginController@index');
 //Routes artwork
 Route::resource('artworks', 'ArtworkController');
 

@@ -19,8 +19,8 @@ class CreateExemplairesTable extends Migration
         $table->increments('id');
         $table->integer('exemplaire_quantity');
         $table->string('exemplaire_picture_path');
-        $table->integer('artwork_id')->unsigned();
-        $table->foreign('artwork_id')->references('id')->on('artworks')
+        $table->integer('artworks_id')->unsigned();
+        $table->foreign('artworks_id')->references('id')->on('artworks')
           ->onDelete('cascade')->onUpdate('cascade');
         $table->timestamps();
       });

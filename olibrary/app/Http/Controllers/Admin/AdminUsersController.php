@@ -84,11 +84,11 @@ class AdminUsersController extends Controller
 
         if ($user_update)
         {
-            return redirect('admin/users/{id}');
+            return redirect(route("adminusers.index"))->with("success", "l'user a bien ete modifié");
         }
         else
         {
-            return redirect()->back();
+            return redirect()->back()->with("danger", "l'user n a pas ete modifié");
         }
     }
 

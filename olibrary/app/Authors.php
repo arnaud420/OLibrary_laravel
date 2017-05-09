@@ -20,4 +20,9 @@ class Authors extends Model
   public function artworks() {
     return $this->hasMany('App\Artworks');
   }
+
+  public function exemplaires() {
+    return $this->hasManyThrough('App\Exemplaires', 'App\Artworks',
+    'authors_id', 'artworks_id', 'id');
+  }
 }

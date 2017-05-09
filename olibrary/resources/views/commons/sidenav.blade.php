@@ -1,65 +1,22 @@
 <!-- debut de la sidenav  -->
-<div id="sidenav" class="indigo lighten-5 hide-on-med-and-down">
-
+<ul id="slide-out" class="side-nav">
   @if(Auth::check())
-    <div id="sidenavImg">
-      <ul id="listImg">
-        <li><img src="{{ Auth::user()->picture_path }}"></li>
-        <li style="margin-top: 60px;">Bonjour, {{ Auth::user()->first_name }}</li>
-      </ul>
-    </div>
-    <!-- liens naviguation  -->
-    <div id="sideLink">
-      <ul>
-        <li><a href="{{route('artworks.index')}}" class="waves-effect center-align valign-wrapper">Catalogue</a></li>
-        <li><a href="/user/{{ Auth::user()->id }}" class="waves-effect center-align">Espace Personnel</a></li>
-        <li><a href="#" class="waves-effect center-align">Emprunts</a></li>
-        <li><a href="/logout" class="waves-effect center-align">Déconnexion</a></li>
-      </ul>
-    </div>
+    <li id="sidenav-profil"><div class="userView">
+      <!-- <div class="background"> -->
+      <!--   <img src="images/office.jpg"> -->
+      <!-- </div> -->
+      <a href="/user/{{ Auth::user()->id }}"><img class="circle" src="{{ Auth::user()->picture_path }}"></a>
+      <a href="#!name"><span class="black-text name">{{ Auth::user()->first_name }}</span></a>
+      <a href="#!email"><span class="black-text email">{{ Auth::user()->email }}</span></a>
+    </div></li>
+    <li><div class="divider"></div></li>
+    <li><a class="waves-effect" href="#">Emprunts</a></li>
+    <li><a class="waves-effect" href="/artworks">Catalogue</a></li>
+    <li><a class="waves-effect" href="/logout">Deconnexion</a></li>
+  @else
+    <li><a href="/login"><i class="material-icons">cloud</i>Connexion</a></li>
+    <li><a href="/register">Inscription</a></li>
   @endif
-
-  <!-- partie checkbox + radiobutton  -->
-  <div id="sidenavRadioCheckbox">
-    <div id="sidenavRadio">
-      <p class="center-align">Trié par :</p>
-      <ul class="left" id="sideRadio">
-        <li>
-          <input class="with-gap" type="radio" id="option1" />
-          <label for="option1" class="black-text">Option 1</label>
-        </li>
-        <li>
-          <input class="with-gap" type="radio"  id="option2" />
-          <label for="option2" class="black-text">Option 2</label>
-        </li>
-        <li>
-          <input class="with-gap" type="radio" id="option3" />
-          <label for="option3" class="black-text">Option 3</label>
-        </li>
-        <li>
-          <input class="with-gap" type="radio" id="option4" />
-          <label for="option4" class="black-text">Option 4</label>
-        </li>
-      </ul>
-    </div>
-
-    <div id="sidenavCheckbox">
-      <ul class="left section" id="sideCheckbox">
-        <li>
-          <input type="checkbox" id="alphabetique" />
-          <label for="alphabetique" class="black-text">Alphabétique</label>
-        </li>
-        <li>
-          <input type="checkbox" id="auteur" />
-          <label for="auteur" class="black-text">Auteur</label>
-        </li>
-        <li>
-          <input type="checkbox" id="disponibilite" />
-          <label for="disponibilite" class="black-text">Disponibilité</label>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-</div>
+</ul>
 <!-- fin de la sidenav  -->
+

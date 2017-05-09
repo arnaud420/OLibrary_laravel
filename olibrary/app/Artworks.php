@@ -6,17 +6,23 @@ use Illuminate\Database\Eloquent\Model;
 
 class Artworks extends Model
 {
+  protected $table ='artworks';
   protected $fillable = [
     'artwork_title',
     'artwork_date',
     'resume',
     'collection',
     'created_at',
+    'author_id',
     'updated_at'
   ];
 
   public function author() {
-    return $this->belongsTo('App\Authors');
+    return $this->belongsTo('App\Authors', 'authors_id', 'id');
+  }
+
+  public function exemplaires() {
+    return $this->hasMany('App\Exemplaires');
   }
 
   public function type() {
@@ -25,9 +31,5 @@ class Artworks extends Model
 
   public function authority() {
     return $this->belongsTo('App\Authoritys');
-  }
-
-  public function exemplaires() {
-    return $this->hasMany('App\Exemplaires');
   }
 }
