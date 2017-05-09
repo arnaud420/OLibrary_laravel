@@ -15,9 +15,9 @@ class DatabaseSeeder extends Seeder
     // $authoritys = factory(App\Authoritys::class, 10)->create();
     $authors = factory(App\Authors::class, 30)->create();
     foreach ($authors as $author) {
-      $author->artworks = factory(App\Artworks::class, rand(1, 30))->create(['authors_id' => $author->id]);
+      $author->artworks = factory(App\Artworks::class, rand(1, 10))->create(['authors_id' => $author->id]);
       foreach($author->artworks as $artwork) {
-        $artwork->exemplaires = factory(App\Exemplaires::class, rand(1, 5))->create(['artworks_id' => $artwork->id]);
+        $artwork->exemplaires = factory(App\Exemplaires::class, rand(1, 3))->create(['artworks_id' => $artwork->id]);
       }
     }
     // $exemplaires = factory(App\Exemplaires::class, 100)->create();
