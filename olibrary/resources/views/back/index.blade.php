@@ -81,10 +81,19 @@
     </div>
 
     <div class="row">
-        <li class="collection-item valign-wrapper">
-            <a href="#"><i class="indigo-text darken-1 material-icons large valign">group</i></a>
-            <span>Autorités</span>
-        </li>
+        <div class="col s12 m4 l2">
+            <li class="collection-item valign-wrapper">
+                <a href="{{route('adminauthorities.index')}}"><i class="indigo-text darken-1 material-icons large valign">group</i></a>
+                <span>Autorités</span>
+            </li>
+        </div>
+
+        <div class="col s12 m4 l2">
+            <li class="collection-item valign-wrapper">
+                <a href="{{route('adminauthorities.create')}}"><i class="indigo-text darken-1 material-icons large valign">group_add</i></a>
+                <span>Ajout d'autorités</span>
+            </li>
+        </div>
     </div>
 
 
