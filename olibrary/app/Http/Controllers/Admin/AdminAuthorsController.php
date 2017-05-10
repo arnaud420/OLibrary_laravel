@@ -21,9 +21,9 @@ class AdminAuthorsController extends Controller
 
         if ($create)
         {
-            $authors = Authors::All();
-            $types = Types::All();
-            $authorities = Authoritys::All();
+            $authors = Authors::orderBy('last_name')->get();
+            $types = Types::orderBy('type_theme')->get();
+            $authorities = Authoritys::orderBy('authority_name')->get();
             return view('back.artworks.create', compact('authors', 'types', 'authorities'));
         }
     }
