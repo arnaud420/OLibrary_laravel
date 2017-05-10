@@ -2,37 +2,47 @@
 
 @section('title', 'Back Admin - ajout autoritée')
 
+@section('styles')
+    <link rel="stylesheet" href="/css/admin.css">
+@endsection
+
 @section('content')
     <h2 class="center grey white-text">Ajout d'autoritée</h2>
 
     <div class="row">
-        <div class="col s12 m8 offset-m2">
-            {!! Form::open(['route' => ['adminauthorities.store']]) !!}
+        <form class="col s12 m8 offset-m2" method="post" action="{{route('adminauthorities.store')}}">
+
+            <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 
             <div class="input-field col s12">
-                {!! Form::label('authority_name',  'Nom : ') !!}
-                {!! Form::text('authority_name', null, ['class' => 'validate']) !!}
+                <input type="text" class="validate" name="authority_name">
+                <label for="authority_name">Nom de l'autorité</label>
             </div>
 
             <div class="input-field col s12">
-                {!! Form::label('authority_email', 'Email : ') !!}
-                {!! Form::email('authority_email', null, ['class' => 'validate']) !!}
+                <input type="email" class="validate" name="authority_email">
+                <label for="authority_email">Email de l'autorité</label>
             </div>
 
-            <div class="input-field col s12">
-                {!! Form::label('authority_phone', 'Téléphone : ') !!}
-                {!! Form::number('authority_phone', null, ['class' => 'validate']) !!}
+            <div class="input-field col s12 m12 l6">
+                <input type="number" class="validate" name="authority_phone">
+                <label for="authority_phone">Téléphone de l'autorité</label>
+            </div>
+
+            <div class="input-field col s6">
+                <select name="families_id">
+                    @foreach($families as $familie)
+                        <option value="{{$familie->id}}">{{$familie->family_name}}</option>
+                    @endforeach
+                </select>
+                <label for="families_id">Nom famille d'autorité</label>
             </div>
 
             <div class="col s12">
-                {!! Form::label('families_id', 'Famille d autoritée : ') !!}
-                {!! Form::select('families_id', $families) !!}
+                <input type="submit" value="Ajouter" class="waves-effect waves-light btn-large green accent-3 right">
             </div>
-            <div class="col s12">
-                {!! Form::submit('Ajouter', ['class' => 'waves-effect waves-light btn-large green accent-3 right']) !!}
-            </div>
-            {!! Form::close() !!}
-        </div>
+
+        </form>
     </div>
 @endsection
 

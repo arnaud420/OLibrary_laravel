@@ -27,7 +27,7 @@ class AdminAuthoritiesController extends Controller
      */
     public function create()
     {
-        $families = FamilyAuthority::pluck('family_name', 'id');
+        $families = FamilyAuthority::all();
         return view('back.authorities.create', compact('families'));
     }
 
@@ -40,12 +40,11 @@ class AdminAuthoritiesController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        $familie = FamilyAuthority::find($input['families_id'])->authoritys->create([
-            'authority_name' => $input['authority_name'],
+        $familie = FamilyAuthority::find($input['families_id'])->authoritys()->create([
+           'authority_name' => $input['authority_name'],
             'authority_email' => $input['authority_email'],
             'authority_phone' => $input['authority_phone'],
             'families_id' => $input['families_id']
-
         ]);
         $familie->save();
 

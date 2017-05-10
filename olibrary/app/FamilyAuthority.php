@@ -14,6 +14,6 @@ class FamilyAuthority extends Model
   ];
 
   public function authoritys() {
-    return $this->hasMany('App\Authoritys');
+    return $this->hasMany('App\Authoritys', 'families_id');
   }
 }
