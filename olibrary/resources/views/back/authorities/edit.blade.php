@@ -24,7 +24,7 @@
 
             <div class="input-field col s12">
                 {!! Form::label('authority_email', 'Adresse email : ') !!}
-                {!! Form::text('authority_email', null, ['class' => 'validate']) !!}
+                {!! Form::email('authority_email', null, ['class' => 'validate']) !!}
             </div>
 
             <div class="col s12">
