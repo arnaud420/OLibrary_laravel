@@ -2,6 +2,10 @@
 
 @section('title', 'Back Admin - ajout utilisateur')
 
+@section('styles')
+    <link rel="stylesheet" href="/css/admin.css">
+@endsection
+
 @section('content')
     <h2 class="center grey white-text">Ajout d'utilisateur</h2>
 
