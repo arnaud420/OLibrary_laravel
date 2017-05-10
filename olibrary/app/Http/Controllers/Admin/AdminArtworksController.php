@@ -46,10 +46,19 @@ class AdminArtworksController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->all();
-        $type = Types::find($input['types_id']);
-        $authoritie = Authoritys::find($input['authorities_id']);
-        $author = Authors::find($input['authors_id']);
+        $artwork = New Artworks;
+        $type = Types::find($request->get('types_id'));
+        $authoritie = Authoritys::find($request->get('authorities_id'));
+        $author = Authors::find($request->get('authors_id'));
+
+        $artwork->artwork_title = $request->get('artwork_title');
+        $artwork->resume = $request->get('resume');
+        $artwork->collection = $request->get('collection');
+        $artwork->artwork_date = $request->get('artwork_date');
+        $artwork->author()->associate($author);
+        $artwork->type()->associate($type);
+        $artwork->authority()->associate($authoritie);
+        $artwork->save();
 
         /*$artwork = Authors::find($input['authors_id'])->artworks()->create([
             'artwork_title' => $input['artwork_title'],

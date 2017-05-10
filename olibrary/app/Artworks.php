@@ -26,10 +26,10 @@ class Artworks extends Model
   }
 
   public function type() {
-    return $this->belongsTo('App\Types');
+    return $this->belongsTo('App\Types', 'types_id', 'id');
   }
 
   public function authority() {
-    return $this->belongsTo('App\Authoritys');
+    return $this->belongsTo('App\Authoritys', 'authorities_id', 'id');
   }
 }
