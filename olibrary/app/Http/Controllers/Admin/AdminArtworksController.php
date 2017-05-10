@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Artworks;
+use App\Authoritys;
 use App\Authors;
+use App\Types;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
@@ -30,8 +32,10 @@ class AdminArtworksController extends Controller
      */
     public function create()
     {
-        $authors = Authors::all();
-        return view('back.artworks.create', compact('authors'));
+        $authors = Authors::orderBy('last_name')->get();
+        $types = Types::orderBy('type_theme')->get();
+        $authorities = Authoritys::orderBy('authority_name')->get();
+        return view('back.artworks.create', compact('authors', 'types', 'authorities'));
     }
 
     /**
@@ -43,7 +47,18 @@ class AdminArtworksController extends Controller
     public function store(Request $request)
     {
         $input = $request->all();
-        Artworks::create($input);
+        $type = Types::find($input['types_id']);
+        $authoritie = Authoritys::find($input['authorities_id']);
+        $author = Authors::find($input['authors_id']);
+
+        /*$artwork = Authors::find($input['authors_id'])->artworks()->create([
+            'artwork_title' => $input['artwork_title'],
+            'resume' => $input['resume'],
+            'collection' => $input['collection'],
+            'artwork_date' => $input['artwork_date'],
+            'authors_id' => $input['authors_id'],
+        ]);
+        $artwork->save();*/
         return redirect(route("adminartworks.create"))->with("success", "l'oeuvre a ete cree");
     }
 

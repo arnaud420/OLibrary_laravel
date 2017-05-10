@@ -28,6 +28,7 @@ Route::group(['as' => 'admin'], function () {
     Route::get('admin', 'Admin\AdminController@index');
     Route::resource('admin/users', 'Admin\AdminUsersController');
     Route::resource('admin/artworks', 'Admin\AdminArtworksController');
+    Route::resource('admin/authorities', 'Admin\AdminAuthoritiesController');
     Route::get('admin/author/create', ['uses' => 'Admin\AdminAuthorsController@create', 'as' => 'author.create']);
     Route::post('admin/author/create', ['uses' => 'Admin\AdminAuthorsController@store', 'as' => 'author.store']);
 });
