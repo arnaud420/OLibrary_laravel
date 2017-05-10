@@ -43,6 +43,24 @@
                 <label for="authors_id">Auteur de l'oeuvre</label>
             </div>
 
+            <div class="input-field col s6">
+                <select name="types_id">
+                    @foreach($types as $type)
+                        <option value="{{$type->id}}">{{$type->type_theme}}</option>
+                    @endforeach
+                </select>
+                <label>Type d'oeuvre</label>
+            </div>
+
+            <div class="input-field col s6">
+                <select name="authorities_id">
+                    @foreach($authorities as $authoritie)
+                        <option value="{{$authoritie->id}}">{{$authoritie->authority_name}}</option>
+                    @endforeach
+                </select>
+                <label>Editeur</label>
+            </div>
+
             <div class="col s12">
                 <input type="submit" value="Ajouter" class="waves-effect waves-light btn-large green accent-3 right">
             </div>
