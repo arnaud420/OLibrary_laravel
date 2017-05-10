@@ -60,14 +60,6 @@ class AdminArtworksController extends Controller
         $artwork->authority()->associate($authoritie);
         $artwork->save();
 
-        /*$artwork = Authors::find($input['authors_id'])->artworks()->create([
-            'artwork_title' => $input['artwork_title'],
-            'resume' => $input['resume'],
-            'collection' => $input['collection'],
-            'artwork_date' => $input['artwork_date'],
-            'authors_id' => $input['authors_id'],
-        ]);
-        $artwork->save();*/
         return redirect(route("adminartworks.create"))->with("success", "l'oeuvre a ete cree");
     }
 
