@@ -20,6 +20,6 @@ class Authoritys extends Model
   }
 
   public function familyAuthority() {
-    return $this->belongsTo('App\FamilyAuthority');
+    return $this->belongsTo('App\FamilyAuthority', 'families_id', 'id');
   }
 }

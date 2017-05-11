@@ -17,7 +17,8 @@ class AdminAuthoritiesController extends Controller
     public function index()
     {
         $authorities = Authoritys::paginate(6);
-        return view('back.authorities.index', compact('authorities'));
+        $families = $authorities->load('familyAuthority');
+        return view('back.authorities.index', compact('authorities', 'families'));
     }
 
     /**

@@ -33,6 +33,7 @@
                     <th>Nom</th>
                     <th>Email</th>
                     <th>Téléphone</th>
+                    <th>Famille d'autorité</th>
                     <th>Modifier</th>
                     <th>Supprimer</th>
                 </tr>
@@ -45,6 +46,7 @@
                         <td>{{$authoritie->authority_name}}</td>
                         <td>{{$authoritie->authority_email}}</td>
                         <td>{{$authoritie->authority_phone}}</td>
+                        <td>{{$authoritie->familyAuthority->family_name}}</td>
                         <td><a class="waves-effect waves-light btn orange" href="{{route('adminauthorities.edit', $authoritie->id)}}">Modifier</a></td>
                         <td>{!! Form::open(['method' => 'DELETE', 'route' => ['adminauthorities.destroy', $authoritie->id]]) !!}
                                 {!! Form::submit('Supprimer', ['class' => 'waves-effect waves-light btn red', 'onclick' => 'return confirm(\'Voulez-vous vraiment supprimer cette autorité ?\')']) !!}
