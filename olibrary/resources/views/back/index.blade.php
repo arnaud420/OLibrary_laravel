@@ -41,7 +41,7 @@
 
     <div class="row">
         <div class="col s12">
-            <h3 class="left adminTitle">Gestion des emprunts</h3>
+            <h3 class="left adminTitle">Gestion des oeuvres</h3>
         </div>
     </div>
 
@@ -66,6 +66,13 @@
                     <li class="divider"></li>
                     <li><a class="indigo-text darken-1" href="{{route('adminartworks.create')}}">Auteur existant</a></li>
                 </ul>
+            </li>
+        </div>
+
+        <div class="col s12 m4 l2">
+            <li class="collection-item valign-wrapper">
+                <a href="{{route('admintype.create')}}"><i class="indigo-text darken-1 material-icons large valign">add_to_photos</i></a>
+                <span>Ajouter un type d'oeuvre</span>
             </li>
         </div>
     </div>

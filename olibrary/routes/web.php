@@ -33,4 +33,6 @@ Route::group(['as' => 'admin'], function () {
     Route::post('admin/author/create', ['uses' => 'Admin\AdminAuthorsController@store', 'as' => 'author.store']);
     Route::get('admin/family-authoritie/create', ['uses' => 'Admin\AdminFamilyAuthoritiesController@create', 'as' => 'familyauthoritie.create']);
     Route::post('admin/family-authoritie/create', ['uses' => 'Admin\AdminFamilyAuthoritiesController@store', 'as' => 'familyauthoritie.store']);
+    Route::get('admin/type/create', ['uses' => 'Admin\AdminTypesController@create', 'as' => 'type.create']);
+    Route::post('admin/type/create', ['uses' => 'Admin\AdminTypesController@store', 'as' => 'type.store']);
 });
