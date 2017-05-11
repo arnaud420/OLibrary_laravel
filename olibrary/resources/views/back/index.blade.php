@@ -100,9 +100,9 @@
                 <a class='dropdown-button' data-activates='dropdown2' href="#"><i class="indigo-text darken-1 material-icons large valign">group_add</i></a>
                 <span>Ajout d'autorités</span>
                 <ul id='dropdown2' class='dropdown-content'>
-                    <li><a class="indigo-text darken-1" href="{{route('adminfamilyauthoritie.create')}}">Famille d'autorité</a></li>
+                    <li><a class="indigo-text darken-1" href="{{route('adminfamilyauthoritie.create')}}">Nouvelle famille d'autorité</a></li>
                     <li class="divider"></li>
-                    <li><a class="indigo-text darken-1" href="{{route('adminauthorities.create')}}">Autorité</a></li>
+                    <li><a class="indigo-text darken-1" href="{{route('adminauthorities.create')}}">Famille d'autorité existante</a></li>
                 </ul>
             </li>
         </div>

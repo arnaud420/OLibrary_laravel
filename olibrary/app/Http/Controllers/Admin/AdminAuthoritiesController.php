@@ -28,7 +28,7 @@ class AdminAuthoritiesController extends Controller
      */
     public function create()
     {
-        $families = FamilyAuthority::all();
+        $families = FamilyAuthority::orderBy('family_name')->get();
         return view('back.authorities.create', compact('families'));
     }
 
