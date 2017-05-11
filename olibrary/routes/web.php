@@ -31,4 +31,6 @@ Route::group(['as' => 'admin'], function () {
     Route::resource('admin/authorities', 'Admin\AdminAuthoritiesController');
     Route::get('admin/author/create', ['uses' => 'Admin\AdminAuthorsController@create', 'as' => 'author.create']);
     Route::post('admin/author/create', ['uses' => 'Admin\AdminAuthorsController@store', 'as' => 'author.store']);
+    Route::get('admin/family-authoritie/create', ['uses' => 'Admin\AdminFamilyAuthoritiesController@create', 'as' => 'familyauthoritie.create']);
+    Route::post('admin/family-authoritie', ['uses' => 'Admin\AdminFamilyAuthoritiesController@store', 'as' => 'familyauthoritie.store']);
 });

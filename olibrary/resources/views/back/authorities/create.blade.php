@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    <h2 class="center grey white-text">Ajout d'autoritée</h2>
+    <h2 class="center grey white-text">Ajout d'autorité</h2>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="post" action="{{route('adminauthorities.store')}}">

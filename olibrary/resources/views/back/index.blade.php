@@ -90,8 +90,13 @@
 
         <div class="col s12 m4 l2">
             <li class="collection-item valign-wrapper">
-                <a href="{{route('adminauthorities.create')}}"><i class="indigo-text darken-1 material-icons large valign">group_add</i></a>
+                <a class='dropdown-button' data-activates='dropdown2' href="#"><i class="indigo-text darken-1 material-icons large valign">group_add</i></a>
                 <span>Ajout d'autorités</span>
+                <ul id='dropdown2' class='dropdown-content'>
+                    <li><a class="indigo-text darken-1" href="{{route('adminfamilyauthoritie.create')}}">Famille d'autorité</a></li>
+                    <li class="divider"></li>
+                    <li><a class="indigo-text darken-1" href="{{route('adminauthorities.create')}}">Autorité</a></li>
+                </ul>
             </li>
         </div>
     </div>
