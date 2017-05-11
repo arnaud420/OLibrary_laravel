@@ -12,4 +12,9 @@ class Admins extends Model
     'created_at',
     'updated_at'
   ];
+
+  public function users()
+  {
+      return $this->hasMany('App\User', 'user_id', 'id');
+  }
 }

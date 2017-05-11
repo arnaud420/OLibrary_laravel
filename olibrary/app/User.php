@@ -40,6 +40,11 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function admin()
+    {
+        return $this->belongsTo('App\Admin');
+    }
+
     public function setPasswordAttribute($value)
     {
         $this->attributes["password"] = Hash::make($value);

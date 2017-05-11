@@ -19,8 +19,8 @@
                     <img src="" class="left hide-on-small-and-down" style="height: 250px; width: 200px; margin-right: 15px">
                     <p>Auteur : {{$artwork->author->last_name}}, {{$artwork->author->first_name}} </p>
                     <p>Date : {{$artwork->artwork_date}}</p>
-                    <!-- <p>Editeur : {//{$artwork->authority->authority_name}}</p>
-                    <p>Genre : {//{$artwork->type->type_name}}</p> -->
+                    <p>Editeur : {{$artwork->authority->authority_name}}</p>
+                    <p>Genre : {{$artwork->type->type_name}}, {{$artwork->type->type_theme}}</p>
                     <p>Collection : {{$artwork->collection}}</p>
 
                     <div class="row">
