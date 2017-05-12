@@ -18,14 +18,20 @@
             </div>
         @endif
 
-        <div class="row">
-            <div class="col s12 grey darken-3 white-text valign-wrapper card-panel">
-                <div class="row col s12" style="padding: 25px 25px 25px 25px">
-                    <div id="divShowUser">
-                        <p>Nom : {{$user->first_name}}</p>
-                        <p>Prénom : {{$user->last_name}}</p>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title center">{{$user->first_name}}, {{$user->first_name}}</span>
+                    <div class="divider"></div>
+                    <div class="section">
                         <p>Email : {{$user->email}}</p>
-                        <p>Téléphone : {{$user->phone}}</p>
+                        <p>Téléphone :
+                            @if($user->phone == null)
+                                <span>Pas de téléphone</span>
+                             @else {{$user->phone}}
+                            @endif
+                        </p>
                         <p>Adresse : {{$user->address}} {{$user->postal_code}} {{$user->city}}</p>
                         <p>Admin :
                             @if($user->admin == 0)
@@ -34,8 +40,8 @@
                                 <span>L'utilisateur est admin</span>
                             @endif
                         </p>
-                        <p><a class="waves-effect waves-light btn red" href="{{route('adminusers.edit', $user->id)}}">Modifier</a></p>
                     </div>
+                    <p><a class="waves-effect waves-light btn red" href="{{route('adminusers.edit', $user->id)}}">Modifier</a></p>
                 </div>
             </div>
         </div>
