@@ -50,8 +50,8 @@ class User extends Authenticatable
       return $this->belongsToMany('Borrows', 'Exemplaires');
     }
 
-    // public function setPasswordAttribute($value)
-    // {
-    //     $this->attributes["password"] = Hash::make($value);
-    // }
+     public function setPasswordAttribute($value)
+     {
+         $this->attributes["password"] = bcrypt($value);
+     }
 }
