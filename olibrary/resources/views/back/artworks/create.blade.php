@@ -10,7 +10,7 @@
     <h2 class="center indigo darken-1 white-text">Ajouter une oeuvre</h2>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2" method="post" action="{{route('adminartworks.store')}}">
+        <form class="col s12 m8 offset-m2" method="post" action="{{route('adminartworks.store')}}" enctype="multipart/form-data">
 
             <input type="hidden" name="_token" id="csrf-token" value="{{ Session::token() }}" />
 
@@ -46,7 +46,7 @@
             <div class="input-field col s6">
                 <select name="types_id">
                     @foreach($types as $type)
-                        <option value="{{$type->id}}">{{$type->type_theme}}</option>
+                        <option value="{{$type->id}}">{{$type->type_name}}</option>
                     @endforeach
                 </select>
                 <label>Type d'oeuvre</label>

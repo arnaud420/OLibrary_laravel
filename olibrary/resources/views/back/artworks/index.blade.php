@@ -30,7 +30,6 @@
             <table class="striped centered responsive-table">
                 <thead>
                 <tr>
-                    <th>Couverture</th>
                     <th>Nom auteur</th>
                     <th>Prénom</th>
                     <th>Titre de l'oeuvre</th>
@@ -43,7 +42,6 @@
                 <tbody>
                 @foreach($artworks as $artwork)
                     <tr>
-                        <td><img src="" style="height: 100px; width: 100px"></td>
                         <td>{{$artwork->author->last_name}}</td>
                         <td>{{$artwork->author->first_name}}</td>
                         <td>{{$artwork->artwork_title}}</td>

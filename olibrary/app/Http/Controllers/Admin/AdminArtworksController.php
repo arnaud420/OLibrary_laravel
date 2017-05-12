@@ -33,7 +33,7 @@ class AdminArtworksController extends Controller
     public function create()
     {
         $authors = Authors::orderBy('last_name')->get();
-        $types = Types::orderBy('type_theme')->get();
+        $types = Types::orderBy('type_name')->get();
         $authorities = Authoritys::orderBy('authority_name')->get();
         return view('back.artworks.create', compact('authors', 'types', 'authorities'));
     }

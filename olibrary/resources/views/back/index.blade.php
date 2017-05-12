@@ -72,7 +72,7 @@
         <div class="col s12 m4 l2">
             <li class="collection-item valign-wrapper">
                 <a href="{{route('admintype.create')}}"><i class="indigo-text darken-1 material-icons large valign">add_to_photos</i></a>
-                <span>Ajouter un type d'oeuvre</span>
+                <span>Ajouter un genre d'oeuvre</span>
             </li>
         </div>
     </div>

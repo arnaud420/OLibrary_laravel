@@ -47,11 +47,6 @@
                 {!! Form::number('postal_code', null, ['class' => 'validate']) !!}
             </div>
 
-            <div class="input-field col s12">
-                {!! Form::label('picture_path', 'Avatar :') !!}
-                {!! Form::file('picture_path', null, ['class' => 'validate']) !!}
-            </div>
-
             <div class="col s12">
                 {!! Form::submit('Modifier', ['class' => 'waves-effect waves-light btn-large red right']) !!}
             </div>
