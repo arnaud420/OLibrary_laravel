@@ -29,19 +29,6 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
   ];
 });
 
-$factory->define(App\FamilyAuthority::class, function(Faker\Generator $faker) {
-  return [
-    'family_name' => str_random(10),
-  ];
-});
-
-$factory->define(App\Types::class, function(Faker\Generator $faker) {
-  return [
-    'type_name' => str_random(10),
-    'type_theme' => str_random(10)
-  ];
-});
-
 $factory->define(App\Authors::class, function(Faker\Generator $faker) {
   return [
     'last_name' => $faker->lastName,
@@ -56,9 +43,7 @@ $factory->define(App\Authoritys::class, function(Faker\Generator $faker) {
     'authority_name' => $faker->company,
     'authority_email' => $faker->unique()->safeEmail,
     'authority_phone' => $faker->phoneNumber,
-    'families_id' => function() {
-      return factory(App\FamilyAuthority::class)->create()->id;
-    }
+    'families_id' => rand(1, 6)
   ];
 });
 
@@ -68,12 +53,7 @@ $factory->define(App\Artworks::class, function(Faker\Generator $faker) {
     'artwork_date' => $faker->date($format = 'Y-m-d', $max = 'now'),
     'resume' => $faker->realText($maxNbChars = 200, $indexSize = 2),
     'collection' => $faker->word,
-    'types_id' => function() {
-      return factory(App\Types::class)->create()->id;
-    },
-    'authorities_id' => function() {
-      return factory(App\Authoritys::class)->create()->id;
-    }
+    'authorities_id' => rand(1, 20)
   ];
 });
 

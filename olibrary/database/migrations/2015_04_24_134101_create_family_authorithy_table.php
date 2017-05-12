@@ -17,7 +17,6 @@ class CreateFamilyAuthorithyTable extends Migration
         $table->engine = 'InnoDB';
         $table->increments('id');
         $table->string('family_name');
-        $table->timestamps();
       });
     }
 

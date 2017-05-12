@@ -1,22 +1,31 @@
 $(document).ready(function() {
 
-  $('select').material_select();
+  var id = $('.artwork-carousel-item:first-child').attr('exemplaire-id');
 
-  var getExemplaires = function(callback) {
+  $('.artwork-carousel-item:first-child').addClass('exemplaire-selected');
+  $('.artwork-picture:first-child').addClass('show-artwork-picture');
+
+  $('.artwork-carousel-item').bind('click', function(element) {
+    id = $(this).attr('exemplaire-id');
+    $('.artwork-carousel-item').removeClass('exemplaire-selected');
+    $(this).addClass('exemplaire-selected');
+    $('.artwork-picture').removeClass('show-artwork-picture');
+    $('#art-picture-'+id).addClass('show-artwork-picture');
+  });
+
+  $('#artwork-btn').bind('click', function(element) {
+
     $.ajax({
-      url: window.location.href + '/exemplaires',
+      url: '/artwork/borrow/'+id,
       method: 'GET',
-      success: function(data) {
-        callback(true, data);
+      dataType: 'json',
+      success: function(res) {
+        console.log(res);
       },
-      error: function(err) {
-        callback(false, err);
+      error: function(req, status, err) {
+        console.log(status, err, req);
       }
     });
-  }
 
-  getExemplaires(function(success, data) {
-    if (success) {
-    }
   });
 });

@@ -15,6 +15,7 @@ Route::get('/', 'LoginController@index');
 //Routes artwork
 Route::resource('artworks', 'ArtworkController');
 Route::get('/artworks/{id}/exemplaires', 'ArtworkController@getExemplaires');
+Route::get('/artwork/borrow/{id}', 'ArtworkController@borrow');
 
 Auth::routes();
 Route::get('/logout', 'LoginController@logout');
