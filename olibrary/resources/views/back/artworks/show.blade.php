@@ -11,31 +11,22 @@
     <h2 class="center indigo darken-1 white-text">Oeuvre</h2>
 
     <div class="row">
-        <div class="col s12 grey darken-3 white-text valign-wrapper card-panel">
-            <div class="row col s12">
-                <h3 class="center white-text">{{$artwork->artwork_title}}</h3>
-                <div id="divShowUser">
-                    <img src="" class="hide-on-med-and-up valign center" style="height: 200px; width: 200px;">
-
-                    <img src="" class="left hide-on-small-and-down" style="height: 250px; width: 200px; margin-right: 15px">
-                    <p>Auteur : {{$artwork->author->last_name}}, {{$artwork->author->first_name}} </p>
-                    <p>Date : {{$artwork->artwork_date}}</p>
-                    <p>Editeur : {{$artwork->authority->authority_name}}</p>
-                    <p>Genre : {{$artwork->type->type_name}}, {{$artwork->type->type_theme}}</p>
-                    <p>Collection : {{$artwork->collection}}</p>
-
-                    <div class="row">
-                        <div class="col s12 center">
-                            <p>Quantité disponible : {//{$artwork->exemplaire->exemplaire_quantity}} </p>
-                            <p>Emprunté par : <span>Emprunteur</span> </p>
+        <div class="col s12 m8 offset-m2">
+            <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
+                    <span class="card-title center">{{$artwork->artwork_title}}</span>
+                    <div class="divider"></div>
+                        <div class="section">
+                            <p>Auteur : {{$artwork->author->last_name}}, {{$artwork->author->first_name}} </p>
+                            <p>Date : {{$artwork->artwork_date}}</p>
+                            <p>Editeur : {{$artwork->authority->authority_name}}</p>
+                            <p>Genre : {{$artwork->type->type_name}}, {{$artwork->type->type_theme}}</p>
+                            <p>Collection : {{$artwork->collection}}</p>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 center">
-                            <p><a class="waves-effect waves-light btn red" href="{{route('adminartworks.edit', $artwork->id)}}">Modifier</a></p>
-                        </div>
-                    </div>
-
+                    <p class="center"><a class="waves-effect waves-light btn red" href="{{route('adminartworks.edit', $artwork->id)}}">Modifier</a></p>
+                </div>
+                <div class="card-action">
+                    <a href="#">Ajouter un exemplaire</a>
                 </div>
             </div>
         </div>

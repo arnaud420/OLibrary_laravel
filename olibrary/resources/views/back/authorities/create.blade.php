@@ -8,7 +8,7 @@
 
 @section('content')
 <div class="container" id="content-wrapper">
-    <h2 class="center grey white-text">Ajout d'autorité</h2>
+    <h2 class="center indigo darken-1 white-text">Ajout d'autorité</h2>
 
     <div class="row">
         <form class="col s12 m8 offset-m2" method="post" action="{{route('adminauthorities.store')}}">
