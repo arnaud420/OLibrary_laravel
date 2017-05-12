@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+<div class="container" id="content-wrapper">
     <h2 class="center grey white-text">Ajout famille d'autorité</h2>
 
     <div class="row">
@@ -24,4 +25,5 @@
             {!! Form::close() !!}
         </div>
     </div>
+</div>
 @endsection

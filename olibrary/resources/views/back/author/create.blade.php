@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+<div class="container" id="content-wrapper">
     <h2 class="center indigo darken-1 white-text">Ajouter un auteur</h2>
 
     <div class="row">
@@ -38,6 +39,5 @@
             {!! Form::close() !!}
         </div>
     </div>
-
-
+</div>
 @endsection

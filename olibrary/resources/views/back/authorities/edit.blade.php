@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/css/admin.css">
 @endsection
 @section('content')
+<div class="container" id="content-wrapper">
     <h2 class="center indigo darken-2 white-text">Edition de l'autorité</h2>
 
     <div class="row">
@@ -33,4 +34,5 @@
             {!! Form::close() !!}
         </div>
     </div>
+</div>
 @endsection

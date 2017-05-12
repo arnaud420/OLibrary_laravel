@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+<div class="container" id="content-wrapper">
     <h2 class="center indigo darken-1 white-text">Oeuvre</h2>
 
     <div class="row">
@@ -39,5 +40,6 @@
             </div>
         </div>
     </div>
+</div>
 
 @endsection

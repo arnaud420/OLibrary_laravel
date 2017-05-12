@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+<div class="container" id="content-wrapper">
     <h2 class="center grey white-text">Ajout d'autorité</h2>
 
     <div class="row">
@@ -44,6 +45,7 @@
 
         </form>
     </div>
+</div>
 @endsection
 
 @section('scripts')

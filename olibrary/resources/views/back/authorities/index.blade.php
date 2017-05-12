@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+<div class="container" id="content-wrapper">
     <div class="row">
         <div class="col s12">
             <h2 class="center indigo darken-2 white-text">Liste des autorités</h2>
@@ -64,6 +65,7 @@
             {!! $authorities->links() !!}
         </div>
     </div>
+</div>
 @endsection
 
 @section('scripts')
