@@ -14,6 +14,42 @@
             </div>
         </div>
 
+        @if (Session::has('flash_familyauthoritie'))
+            <div class="row">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                    <p>{{Session::get('flash_familyauthoritie')}}</p>
+                </div>
+            </div>
+        @endif
+        @if (Session::has('flash_authoritie'))
+            <div class="row">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                    <p>{{Session::get('flash_authoritie')}}</p>
+                </div>
+            </div>
+        @endif
+        @if (Session::has('flash_user'))
+            <div class="row">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                    <p>{{Session::get('flash_user')}}</p>
+                </div>
+            </div>
+        @endif
+        @if (Session::has('flash_artwork'))
+            <div class="row">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                    <p>{{Session::get('flash_artwork')}}</p>
+                </div>
+            </div>
+        @endif
+        @if (Session::has('flash_type'))
+            <div class="row">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                    <p>{{Session::get('flash_type')}}</p>
+                </div>
+            </div>
+        @endif
+
         <div class="row">
             <div class="col s12">
                 <h3 class="left adminTitle">Gestion des utilisateurs</h3>
@@ -112,3 +148,11 @@
     </div>
 
 @endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function () {
+            $('.div-alert').delay(3000).slideUp(300);
+        })
+    </script>
+    @endsection

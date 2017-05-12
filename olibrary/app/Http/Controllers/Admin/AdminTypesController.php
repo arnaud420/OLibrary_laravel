@@ -17,9 +17,10 @@ class AdminTypesController extends Controller
     {
         $input = $request->all();
         $create = Types::create($input);
+        \Session::flash('flash_type', "Genre ajouté avec succès");
         if ($create)
         {
-            return redirect(route("admin"))->with("success", "le type d'oeuvre a ete cree");
+            return redirect(route("admin"));
         }
         else
         {

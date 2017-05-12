@@ -49,7 +49,8 @@ class AdminAuthoritiesController extends Controller
         ]);
         $familie->save();
 
-        return redirect(route("adminauthorities.create"))->with("success", "l'utilisateur a ete cree");
+        \Session::flash('flash_authoritie', "Autorité ajouté avec succès");
+        return redirect(route("admin"));
     }
 
     /**

@@ -60,7 +60,8 @@ class AdminArtworksController extends Controller
         $artwork->authority()->associate($authoritie);
         $artwork->save();
 
-        return redirect(route("adminartworks.create"))->with("success", "l'oeuvre a ete cree");
+        \Session::flash('flash_artwork', "Oeuvre ajouté avec succès");
+        return redirect(route("admin"));
     }
 
     /**

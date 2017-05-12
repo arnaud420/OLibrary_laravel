@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\FamilyAuthority;
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,9 +18,10 @@ class AdminFamilyAuthoritiesController extends Controller
     {
         $input = $request->all();
         $create = FamilyAuthority::create($input);
+        \Session::flash('flash_familyauthoritie', "Famille d'autorité ajouté");
         if ($create)
         {
-            return redirect(route("admin"))->with("success", "la famille d'autorité a ete cree");
+            return redirect(route("admin"));
         }
         else
         {

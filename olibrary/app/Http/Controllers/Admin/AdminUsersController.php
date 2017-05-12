@@ -41,8 +41,9 @@ class AdminUsersController extends Controller
     {
         $input = $request->all();
         User::create($input);
+        \Session::flash('flash_user', "Utilisateur ajouté avec succès");
 
-        return redirect(route("adminusers.create"))->with("success", "l'utilisateur a ete cree");
+        return redirect(route("admin"));
     }
 
     /**
