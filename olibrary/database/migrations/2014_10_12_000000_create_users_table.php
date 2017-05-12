@@ -27,6 +27,13 @@ class CreateUsersTable extends Migration
       $table->rememberToken();
       $table->timestamps();
     });
+
+    Schema::create('exemplaires_user', function(Blueprint $table) {
+      $table->integer('user_id');
+      $table->integer('exemplaires_id');
+      $table->primary(['user_id', 'exemplaires_id']);
+      $table->timestamps();
+    });
   }
 
   /**
@@ -37,5 +44,6 @@ class CreateUsersTable extends Migration
   public function down()
   {
     Schema::dropIfExists('users');
+    Schema::dropIfExists('user_exemplaire');
   }
 }

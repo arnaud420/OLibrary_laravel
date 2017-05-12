@@ -55,21 +55,27 @@ class ArtworkController extends Controller
         $userId = Auth::user()->id;
         $exemplaireId = $id;
 
-        $exemplaireQuantity = Exemplaires::findOrFail($id)->exemplaire_quantity;
-        $exemplaireInRest = Borrows::where('exemplaire_id', $id)->count();
-        $exemplaireInStock = false;
-        $usrCanBrrw = false;
+        $user = User::find($userId);
+        $exemplaireToBorrow = Exemplaires::find($exemplaireId);
 
-        return Response()->json([
-          'message' => 'Borrow success: ',
-          'userId' => $userId,
-          'exemplaireId' => $exemplaireId,
-          'isLogged' => Auth::check(),
-          'exemplaireInRest' => $exemplaireInRest,
-          'exemplaireQuantity' => $exemplaireQuantity,
-          'exemplaireInStock' => $exemplaireInStock,
-          'usrCanBrrw' => $usrCanBrrw
-        ]);
+        foreach($user->exemplaires as $exemplaire) {
+          if ($exemplaire->id == $exemplaireId) {
+            return Response()->json([
+              'message' => 'Exemplaire déjà emprunter.'
+            ]);
+          }
+        }
+        if ($exemplaireToBorrow->exemplaire_quantity <= count($exemplaireToBorrow->users)) {
+          return Response()->json([
+            'message' => 'Plus d\'exemplaires disponibles.'
+          ]);
+        } else {
+          $user->exemplaires()->attach($exemplaireId);
+
+          return Response()->json([
+            'message' => 'Emprunt reussi.',
+          ]);
+        }
       }
     }
 

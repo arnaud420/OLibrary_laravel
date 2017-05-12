@@ -20,7 +20,7 @@ $(document).ready(function() {
       method: 'GET',
       dataType: 'json',
       success: function(res) {
-        console.log(res);
+        Materialize.toast(res.message, 3000, 'rounded');
       },
       error: function(req, status, err) {
         console.log(status, err, req);

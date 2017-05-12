@@ -19,7 +19,7 @@ class Exemplaires extends Model
     return $this->belongsTo('App\Artworks', 'artworks_id', 'id');
   }
 
-  public function borrow() {
-    return $this->hasMany('App\Borrows');
+  public function users() {
+    return $this->belongsToMany(User::class)->withTimestamps();
   }
  }

@@ -4,15 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Borrows extends Model
+class ExemplairesUser extends Model
 {
-  protected $table = 'borrows';
+  protected $table = 'exemplaires_user';
 
   protected $fillable = [
-    'borrow_return_date',
-    'rate',
     'created_at',
-    'updated_at'
   ];
-
 }

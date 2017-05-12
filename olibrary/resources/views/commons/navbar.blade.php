@@ -9,7 +9,7 @@
         <li><a href="/login">Connexion</a></li>
         <li><a href="/register">Inscription</a></li>
       @else
-        <li><a href="#">Emprunts</a></li>
+        <li><a href="/user/borrows">Emprunts</a></li>
         <li><a href="{{route('artworks.index')}}">Catalogue</a></li>
         <li><a href="/user/{{ Auth::user()->id }}">Profil</a></li>
         <li><a href="/logout">Deconnexion</a></li>

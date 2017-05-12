@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Barryvdh\Debugbar\Facade as Debugbar;
 use App\User;
+use App\Artworks;
 
 class UserController extends Controller
 {
@@ -33,5 +34,13 @@ class UserController extends Controller
       {
           return redirect()->back();
       }
+  }
+
+  public function borrows() {
+    $user = User::findOrFail(Auth::user()->id);
+    foreach($user->exemplaires as $exemplaire) {
+      $exemplaire->artwork = Artworks::find($exemplaire->artworks_id);
+    }
+    return view('user.borrows', ['borrows' => $user->exemplaires]);
   }
 }
