@@ -16,35 +16,35 @@
 
         @if (Session::has('flash_familyauthoritie'))
             <div class="row">
-                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert z-depth-4">
                     <p>{{Session::get('flash_familyauthoritie')}}</p>
                 </div>
             </div>
         @endif
         @if (Session::has('flash_authoritie'))
             <div class="row">
-                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert z-depth-4">
                     <p>{{Session::get('flash_authoritie')}}</p>
                 </div>
             </div>
         @endif
         @if (Session::has('flash_user'))
             <div class="row">
-                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert z-depth-4">
                     <p>{{Session::get('flash_user')}}</p>
                 </div>
             </div>
         @endif
         @if (Session::has('flash_artwork'))
             <div class="row">
-                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert z-depth-4">
                     <p>{{Session::get('flash_artwork')}}</p>
                 </div>
             </div>
         @endif
         @if (Session::has('flash_type'))
             <div class="row">
-                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert">
+                <div class="col s12 m8 offset-m2 grey lighten-2 green-text div-alert z-depth-4">
                     <p>{{Session::get('flash_type')}}</p>
                 </div>
             </div>

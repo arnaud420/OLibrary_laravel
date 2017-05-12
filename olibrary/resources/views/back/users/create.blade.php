@@ -34,6 +34,14 @@
                     {!! Form::password('password', null, ['class' => 'validate']) !!}
                 </div>
 
+                <div class="input-field col s12">
+                    <select name="admin">
+                        <option value="0">Non</option>
+                        <option value="1">Oui</option>
+                    </select>
+                    <label for="admin">Admin</label>
+                </div>
+
                 <div class="col s12">
                     {!! Form::submit('Ajouter', ['class' => 'waves-effect waves-light btn-large green accent-3 right']) !!}
                 </div>
@@ -41,4 +49,12 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function(){
+            $('select').material_select();
+        });
+    </script>
 @endsection

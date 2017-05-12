@@ -13,22 +13,19 @@
             <div class="col s12">
                 {!! Form::open(['route' => ['adminusers.update', $user->id], 'method' => 'put']) !!}
 
-                <div class="input-field col m6 s12">
-                    {!! Form::label('last_name', '* Nom : ') !!}
-                    {!! Form::text('last_name', null, ['class' => 'validate']) !!}
+                <div class="input-field col s6">
+                    {!! Form::hidden('last_name', $user->last_name) !!}
                 </div>
 
-                <div class="input-field col s12 m6">
-                    {!! Form::label('first_name', '* Prenom : ') !!}
-                    {!! Form::text('first_name', null, ['class' => 'validate']) !!}
+                <div class="input-field col s6">
+                    {!! Form::hidden('first_name', $user->first_name) !!}
                 </div>
 
-                <div class="input-field col s12 m6">
-                    {!! Form::label('email', '* Email : ') !!}
-                    {!! Form::email('email', null, ['class' => 'validate']) !!}
+                <div class="input-field col s6">
+                    {!! Form::hidden('email', $user->email) !!}
                 </div>
 
-                <div class="input-field col s12 m6">
+                <div class="input-field col s12">
                     {!! Form::label('phone', 'Téléphone : ') !!}
                     {!! Form::number('phone', null, ['class' => 'validate']) !!}
                 </div>
@@ -48,6 +45,14 @@
                     {!! Form::number('postal_code', null, ['class' => 'validate']) !!}
                 </div>
 
+                <div class="input-field col s12">
+                    <select name="admin">
+                        <option value="0">Non</option>
+                        <option value="1">Oui</option>
+                    </select>
+                    <label for="admin">Admin</label>
+                </div>
+
                 <div class="col s12">
                     {!! Form::submit('Modifier', ['class' => 'waves-effect waves-light btn-large red right']) !!}
                 </div>
@@ -55,4 +60,12 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        $(document).ready(function(){
+            $('select').material_select();
+        });
+    </script>
 @endsection

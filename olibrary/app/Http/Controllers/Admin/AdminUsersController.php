@@ -85,7 +85,8 @@ class AdminUsersController extends Controller
 
         if ($user_update)
         {
-            return redirect(route("adminusers.index"))->with("success", "l'user a bien ete modifié");
+            \Session::flash('flash_user', "Utilisateur modifié avec succès");
+            return redirect(route("adminusers.show", $id));
         }
         else
         {
