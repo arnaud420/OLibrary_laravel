@@ -1,45 +1,96 @@
+/* Artwork Card */
 
-/* Artwork card */
-#artDiv {
-  margin-top: 10%;
-  padding: 15px 30px 15px 30px;
+#artwork-card {
+  margin: 5% 0 5% 0;
 }
 
-#artImg {
-  margin-right: 25px;
+#artwork-card-wrapper {
+  box-shadow: 0 0 0 0 white; !important
 }
 
-#artTitle {
-  margin-left: 20px;
+#artwork-card .card-image {
+  height: 600px;
+  width: 400px;
+  position: relative;
 }
 
-#artInfo {
-  border: 1px solid black;
-  margin-left: 10px;
-  margin-top: 20px;
-  word-wrap: break-word;
+#artwork-card .card-image img {
+  position: absolute;
+  opacity: 0;
 }
 
-#artdispo {
-  background-color: red;
-  height: 100px;
-  width: 100px;
+.show-artwork-picture {
+  opacity: 1 !important;
 }
 
-@media all and (max-width: 700px)
+
+#artwork-card-title {
+  font-family: 'Righteous', cursive;
+  font-size: 50px;
+}
+
+#artwork-resume {
+  margin: 6% 0 6% 0;
+  font-size: 20px;
+  width: 35%;
+}
+
+#artwork-info {
+  font-size: 20px;
+  width: 70%;
+  margin-left: 30%;
+}
+
+#artwork-info .artwork-info-item {
+  text-align: right;
+  color: black;
+}
+
+#select-exemplaire {
+  margin: 2% 0 0 0;
+  margin: 10% 0 0 0;
+}
+
+#select-exemplaire p {
+  font-weight: 600;
+  margin: 0 0 2% 0;
+}
+
+#artwork-carousel {
+  position: relative;
+  display: flex;
+}
+
+#artwork-carousel .artwork-carousel-item {
+  width: 120px;
+  height: 160px;
+  opacity: 0.6;
+  transition: opacity 0.5s;
+}
+
+.exemplaire-selected {
+  border: 3px solid #3949ab !important;
+  opacity: 1 !important;
+}
+
+.artwork-btn {
+  display: inline-block;
+  right: 0;
+}
+
+@media all and (max-width: 900px)
 {
-  #artImg
-  {
-    margin-left: 15px;
-    margin-bottom: 10px;
+  .card-image {
+    display: none;
   }
-  #artTitle
-  {
-    margin: 0;
+
+  #artwork-resume {
+    width: 100%;
   }
-  .stars
-  {
-    margin-left: 50px;
+
+  #artwork-info {
+    margin-left: 0;
+    width: 100%;
   }
 }
 
@@ -61,9 +112,30 @@
   margin: 5px 1px 5px 1px;
 }
 
+.artwork-card .cover-carousel {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.artwork-card .cover-carousel .exemplaire-picture {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s;
+  width: 100%;
+  height: 0%;
+}
+
+.show-picture {
+  height: 100% !important;
+  opacity: 1 !important;
+}
+
 .artwork-card .card-title {
   font-size: 18px;
   font-weight: 500;
+  z-index: 1000;
 }
 
 .artwork-card .card-action {
@@ -71,10 +143,18 @@
   bottom: 0;
   opacity: 0;
   transition: all 0.2s;
+  z-index: 999;
+  width: 100%;
+  height: 0%;
 }
 
 .show-action {
+  height: 16% !important;
   opacity: 1 !important;
+}
+
+.artwork-card .card-action .author-action a {
+  margin: 0;
 }
 
 .artwork-card .artwork-resume {
@@ -88,7 +168,7 @@
   transform: translateY(-50%);
 }
 
-@media all and (max-width: 700px)
+@media all and (max-width: 900px)
 {
   .artwork-card {
     flex-basis: 49%;

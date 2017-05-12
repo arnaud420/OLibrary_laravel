@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 use App\Authors;
 use App\Artworks;
 use App\Exemplaires;
+use App\Borrows;
+use Illuminate\Support\Facades\Auth;
 
 class ArtworkController extends Controller
 {
@@ -41,6 +44,33 @@ class ArtworkController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function borrow(Request $request, $id) {
+      if (!Auth::check()) {
+        return Response()->json([
+          'message' => 'Pas connecté'
+        ], 400);
+      } else {
+        $userId = Auth::user()->id;
+        $exemplaireId = $id;
+
+        $exemplaireQuantity = Exemplaires::findOrFail($id)->exemplaire_quantity;
+        $exemplaireInRest = Borrows::where('exemplaire_id', $id)->count();
+        $exemplaireInStock = false;
+        $usrCanBrrw = false;
+
+        return Response()->json([
+          'message' => 'Borrow success: ',
+          'userId' => $userId,
+          'exemplaireId' => $exemplaireId,
+          'isLogged' => Auth::check(),
+          'exemplaireInRest' => $exemplaireInRest,
+          'exemplaireQuantity' => $exemplaireQuantity,
+          'exemplaireInStock' => $exemplaireInStock,
+          'usrCanBrrw' => $usrCanBrrw
+        ]);
+      }
     }
 
     public function getExemplaires(Request $request) {

@@ -45,6 +45,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\Admin');
     }
 
+    public function borrows() {
+      return $this->belongsToMany('Borrows', 'Exemplaires');
+    }
+
     // public function setPasswordAttribute($value)
     // {
     //     $this->attributes["password"] = Hash::make($value);

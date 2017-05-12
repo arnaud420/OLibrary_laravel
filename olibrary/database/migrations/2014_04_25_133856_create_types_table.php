@@ -17,8 +17,6 @@ class CreateTypesTable extends Migration
       $table->engine = 'InnoDB';
       $table->increments('id');
       $table->string('type_name');
-      $table->string('type_theme');
-      $table->timestamps();
     });
   }
 

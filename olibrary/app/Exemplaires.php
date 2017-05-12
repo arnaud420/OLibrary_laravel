@@ -18,4 +18,8 @@ class Exemplaires extends Model
   public function artwork() {
     return $this->belongsTo('App\Artworks', 'artworks_id', 'id');
   }
-}
+
+  public function borrow() {
+    return $this->hasMany('App\Borrows');
+  }
+ }

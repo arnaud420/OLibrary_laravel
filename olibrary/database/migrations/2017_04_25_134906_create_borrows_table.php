@@ -16,15 +16,10 @@ class CreateBorrowsTable extends Migration
       Schema::enableForeignKeyConstraints();
       Schema::create('borrows', function (Blueprint $table) {
         $table->engine = 'InnoDB';
-        $table->increments('id');
         $table->integer('user_id')->unsigned();
-        $table->foreign('user_id')->references('id')->on('users')
-          ->onDelete('cascade')->onUpdate('cascade');
         $table->integer('exemplaire_id')->unsigned();
-        $table->foreign('exemplaire_id')->references('id')->on('exemplaires')
-          ->onDelete('cascade')->onUpdate('cascade');
-        $table->date('borrow_return_date');
-        $table->integer('rate');
+        $table->primary(['user_id', 'exemplaire_id']);
+        $table->integer('rate')->nullable();
         $table->timestamps();
       });
     }
