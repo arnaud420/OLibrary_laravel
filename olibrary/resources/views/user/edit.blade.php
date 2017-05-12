@@ -3,6 +3,7 @@
 @section('title', 'Profile')
 
 @section('content')
+  <div class="container" id="content-wrapper">
     <h1 class="center">Edition du profile</h1>
 
     <div class="row">
@@ -51,5 +52,6 @@
                </div>
                {!! Form::close() !!}
        </div>
-    </div>
+ </div>
+  </div>
 @endsection

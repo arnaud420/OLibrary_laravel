@@ -81,5 +81,6 @@ $factory->define(App\Exemplaires::class, function(Faker\Generator $faker) {
   return [
     'exemplaire_quantity' => $faker->randomDigitNotNull,
     'exemplaire_picture_path' => $faker->imageUrl($width = 100, $height = 300),
+    'exemplaire_name' => $faker->sentence($nbWorkds = 1)
   ];
 });

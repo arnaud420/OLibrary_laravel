@@ -16,13 +16,10 @@ class ArtworkController extends Controller
      */
     public function index()
     {
-      // $artworks = Artworks::paginate(12);
-      // $artworks->load('author');
-      // $artworks->load('exemplaires');
-      $artworks = Artworks::all();
+      $artworks = Artworks::paginate(16);
       $artworks->load('author');
       $artworks->load('exemplaires');
-      return view('layouts.default', ['artworks' => $artworks]);
+      return view('layouts.catalog', ['artworks' => $artworks]);
     }
 
     /**
@@ -46,6 +43,18 @@ class ArtworkController extends Controller
         //
     }
 
+    public function getExemplaires(Request $request) {
+      if ($request->ajax()) {
+
+        $artwork = Artworks::findOrFail($request->id);
+        $artwork->load('exemplaires');
+
+        return Response()->json([
+          'exemplaires' => $artwork->exemplaires
+        ]);
+      }
+    }
+
     /**
      * Display the specified resource.
      *
@@ -56,8 +65,8 @@ class ArtworkController extends Controller
     {
         $artwork = Artworks::findOrFail($id);
         $artwork->load('author');
-        //$exemplaire = $artwork->exemplaires()->get();
-        return view('artworks.show', compact('artwork', 'exemplaire'));
+        $artwork->load('exemplaires');
+        return view('artworks.show', ['artwork' => $artwork]);
     }
 
     /**
