@@ -25,8 +25,10 @@
 
                             <div class="divider"></div>
                             <div class="section">
-                                @if(count($artwork->exemplaires) > 0)
+                                @if(count($artwork->exemplaires) > 1)
                                 <p class="center paddingBot" style="text-decoration: underline;">L'oeuvre possède {{count($artwork->exemplaires)}} exemplaires.</p>
+                                @elseif(count($artwork->exemplaires) == 1)
+                                    <p class="center paddingBot" style="text-decoration: underline;">L'oeuvre possède {{count($artwork->exemplaires)}} exemplaire.</p>
                                 @else
                                     <p>L'oeuvre n'a pas d'exemplaire disponible.</p>
                                 @endif

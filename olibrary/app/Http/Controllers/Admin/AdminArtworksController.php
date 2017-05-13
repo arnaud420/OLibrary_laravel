@@ -76,7 +76,7 @@ class AdminArtworksController extends Controller
         $author = $artwork->load('author');
         $type = $artwork->load('type');
         $authority = $artwork->load('authority');
-        return view('back.artworks.show', compact('artwork', 'author', 'type', 'authority', 'exemplaire'));
+        return view('back.artworks.show', compact('artwork', 'author', 'type', 'authority'));
     }
 
     /**
