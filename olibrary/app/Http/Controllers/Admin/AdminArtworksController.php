@@ -74,7 +74,6 @@ class AdminArtworksController extends Controller
     {
         $artwork = Artworks::findOrFail($id);
         $author = $artwork->load('author');
-        $exemplaire = $artwork->load('exemplaires');
         $type = $artwork->load('type');
         $authority = $artwork->load('authority');
         return view('back.artworks.show', compact('artwork', 'author', 'type', 'authority', 'exemplaire'));

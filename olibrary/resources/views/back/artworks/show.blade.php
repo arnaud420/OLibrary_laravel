@@ -21,7 +21,21 @@
                             <p>Date : {{$artwork->artwork_date}}</p>
                             <p>Editeur : {{$artwork->authority->authority_name}}</p>
                             <p>Genre : {{$artwork->type->type_name}}, {{$artwork->type->type_theme}}</p>
-                            <p>Collection : {{$artwork->collection}}</p>
+                            <p class="paddingBot">Collection : {{$artwork->collection}}</p>
+
+                            <div class="divider"></div>
+                            <div class="section">
+                                @if(count($artwork->exemplaires) > 0)
+                                <p class="center paddingBot" style="text-decoration: underline;">L'oeuvre possède {{count($artwork->exemplaires)}} exemplaires.</p>
+                                @else
+                                    <p>L'oeuvre n'a pas d'exemplaire disponible.</p>
+                                @endif
+                            @foreach($artwork->exemplaires as $exemplaire)
+                                    <p>{{$exemplaire->exemplaire_name}} |
+                                        <span>Quantité restante : {{$exemplaire->exemplaire_quantity}}</span>
+                                    </p>
+                                @endforeach
+                            </div>
                         </div>
                     <div class="row">
                         <div class="col s12">
