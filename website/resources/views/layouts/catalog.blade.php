@@ -8,6 +8,20 @@
 
 @section('content')
   <div class="container" id="content-wrapper">
+    <div class="" id="search-engine">
+      <div class="search-wrapper auth-form container">
+        <form class="col s12" method="POST" action="/artworks/search">
+          {{ csrf_field() }}
+          <div class="row">
+            <div class="input-field col s9">
+              <input id="search-input" type="text" class="validate" name="value">
+              <label for="search-input">Rechercher parmi les oeuvres</label>
+            </div>
+            <button type="submit" class="btn btn-primary indigo darken-1 col s3">Rechercher</button>
+          </div>
+        </form>
+      </div>
+    </div>
     <div id="catalog-wrapper">
       @foreach($artworks as $artwork)
         <div id="artwork-{{ $artwork->id }}" class="artwork-card card indigo darken-1">
@@ -22,14 +36,7 @@
             <p class="artwork-author">{{ $artwork->author->first_name." ".$artwork->author->last_name }}</p>
           </div>
           <div class="card-action">
-            <div class="row">
-              <div class="col s6 center-text">
-                <a href="/artworks/{{ $artwork->id }}">Emprunter</a>
-              </div>
-              <div class="author-action col s6 center-text">
-                <a href="#">Auteur</a>
-              </div>
-            </div>
+            <a href="/artworks/{{ $artwork->id }}">Emprunter</a>
           </div>
         </div>
       @endforeach
@@ -43,10 +50,5 @@
 @endsection
 
 @section('scripts')
-  <script>
-    $(document).ready(function(){
-      $(".button-collapse").sideNav();
-    });
-  </script>
   <script src="/js/catalog.js"></script>
 @endsection

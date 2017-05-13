@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artworks extends Model
 {
   protected $table ='artworks';
+
   protected $fillable = [
     'artwork_title',
     'artwork_date',

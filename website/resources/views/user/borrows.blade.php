@@ -1,6 +1,7 @@
 @extends('commons.default')
 
 @section('title', 'Emprunts')
+
 @section('styles')
   <link rel="stylesheet" href="/css/borrows.css">
   <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">

@@ -1,0 +1,30 @@
+#list-info-wrapper {
+  font-size: 25px;
+  margin: 10% 0 10% 0;
+}
+
+.list {
+  width: 66%;
+  margin-left: 15%;
+}
+
+.list-item {
+  height: 60px;
+  font-family: 'Righteous', cursive;
+}
+
+.info-item {
+  color: black; !important;
+  font-family: 'Roboto';
+}
+
+.right {
+  text-align: right; !important;
+}
+
+@media all and (max-width: 500px) 
+{
+  .right {
+    text-align: center; !important
+  }
+}

@@ -16,24 +16,22 @@ class UserController extends Controller
 
   public function edit($id)
   {
-      $user = User::findOrFail($id);
-      return view('user.edit', compact('user'));
+    $user = User::findOrFail($id);
+    return view('user.edit', compact('user'));
   }
 
   public function update(Request $request, $id)
   {
-      $input = $request->all();
-      $user = User::findOrFail($id);
-      $user_update = $user->update($input);
+    $input = $request->all();
+    $user = User::findOrFail($id);
+    $user_update = $user->update($input);
 
-      if ($user_update)
-      {
-          return redirect('/user/{id}');
-      }
-      else
-      {
-          return redirect()->back();
-      }
+    if ($user_update) {
+      return redirect('/user/{id}');
+    }
+    else {
+      return redirect()->back();
+    }
   }
 
   public function borrows() {

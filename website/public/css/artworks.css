@@ -172,6 +172,15 @@
 {
   .artwork-card {
     flex-basis: 49%;
+    height: 550px;
     margin: 5px 1px 5px 1px;
+  }
+}
+
+@media all and (max-width: 500px)
+{
+  .artwork-card {
+    flex-basis: 49%;
+    height: 300px;
   }
 }

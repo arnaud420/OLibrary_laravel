@@ -25,27 +25,6 @@ class ArtworkController extends Controller
       return view('layouts.catalog', ['artworks' => $artworks]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function borrow(Request $request, $id) {
       if (!Auth::check()) {
         return Response()->json([
@@ -105,37 +84,12 @@ class ArtworkController extends Controller
         return view('artworks.show', ['artwork' => $artwork]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function searchAll(Request $request) {
+      $value = $request->input('value');
+      $results = Artworks::
+        where('artwork_title', 'LIKE', '%'.$value.'%')
+        ->orWhere('resume', 'LIKE', '%'.$value.'%')
+        ->get();
+      return view('artworks.searchResults', ['results' => $results]);
     }
 }

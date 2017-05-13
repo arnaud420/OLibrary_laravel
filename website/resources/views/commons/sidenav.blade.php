@@ -7,7 +7,7 @@
       <a href="#!email"><span class="black-text email">{{ Auth::user()->email }}</span></a>
     </div></li>
     <li><div class="divider"></div></li>
-    <li><a class="waves-effect" href="#">Emprunts</a></li>
+    <li><a class="waves-effect" href="/user/borrows">Emprunts</a></li>
     <li><a class="waves-effect" href="/artworks">Catalogue</a></li>
     <li><a class="waves-effect" href="/logout">Deconnexion</a></li>
   @else

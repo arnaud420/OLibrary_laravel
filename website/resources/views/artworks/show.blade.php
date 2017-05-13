@@ -1,6 +1,6 @@
 @extends('commons.default')
 
-@section('title', 'Artwork')
+@section('title', 'Exemplaire')
 
 @section('styles')
   <link rel="stylesheet" href="/css/artworks.css">
