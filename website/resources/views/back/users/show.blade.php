@@ -34,7 +34,7 @@
                         </p>
                         <p>Adresse : {{$user->address}} {{$user->postal_code}} {{$user->city}}</p>
                         <p>Admin :
-                            @if($user->admin == 0)
+                            @if($user->is_admin == 0)
                                 <span>L'utilisateur n'est pas admin</span>
                             @else
                                 <span>L'utilisateur est admin</span>

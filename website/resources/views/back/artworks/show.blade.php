@@ -20,7 +20,7 @@
                             <p>Auteur : {{$artwork->author->last_name}}, {{$artwork->author->first_name}} </p>
                             <p>Date : {{$artwork->artwork_date}}</p>
                             <p>Editeur : {{$artwork->authority->authority_name}}</p>
-                            <p>Genre : {{$artwork->type->type_name}}, {{$artwork->type->type_theme}}</p>
+                            <p>Genre : {{$artwork->type->type_name}}</p>
                             <p class="paddingBot">Collection : {{$artwork->collection}}</p>
 
                             <div class="divider"></div>
