@@ -1,0 +1,39 @@
+#borrow-list {
+  margin: 5% 3% 5% 3%;
+}
+
+
+.borrow-item {
+  display: flex;
+}
+
+#borrow-list #borrow-picture {
+  width: 300px;
+  max-height: 450px;
+}
+
+#borrow-list .borrow-info {
+  width: 70%;
+  margin-left: 5%;
+}
+
+#borrow-list .borrow-info .title {
+  font-family: 'Righteous', cursive;
+  font-size: 50px;
+}
+
+#borrow-list .borrow-info p {
+  font-size: 20px;
+}
+
+@media all and (max-width: 900px)
+{
+  #borrow-list #borrow-picture {
+    width: 60px;
+    max-height: 80px;
+  }
+
+  #borrow-list .borrow-info .title {
+    font-size: 25px;
+  }
+}

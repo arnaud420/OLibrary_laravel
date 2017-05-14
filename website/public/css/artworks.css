@@ -1,0 +1,186 @@
+/* Artwork Card */
+
+#artwork-card {
+  margin: 5% 0 5% 0;
+}
+
+#artwork-card-wrapper {
+  box-shadow: 0 0 0 0 white; !important
+}
+
+#artwork-card .card-image {
+  height: 600px;
+  width: 400px;
+  position: relative;
+}
+
+#artwork-card .card-image img {
+  position: absolute;
+  opacity: 0;
+}
+
+.show-artwork-picture {
+  opacity: 1 !important;
+}
+
+
+#artwork-card-title {
+  font-family: 'Righteous', cursive;
+  font-size: 50px;
+}
+
+#artwork-resume {
+  margin: 6% 0 6% 0;
+  font-size: 20px;
+  width: 35%;
+}
+
+#artwork-info {
+  font-size: 20px;
+  width: 70%;
+  margin-left: 30%;
+}
+
+#artwork-info .artwork-info-item {
+  text-align: right;
+  color: black;
+}
+
+#select-exemplaire {
+  margin: 2% 0 0 0;
+  margin: 10% 0 0 0;
+}
+
+#select-exemplaire p {
+  font-weight: 600;
+  margin: 0 0 2% 0;
+}
+
+#artwork-carousel {
+  position: relative;
+  display: flex;
+}
+
+#artwork-carousel .artwork-carousel-item {
+  width: 120px;
+  height: 160px;
+  opacity: 0.6;
+  transition: opacity 0.5s;
+}
+
+.exemplaire-selected {
+  border: 3px solid #3949ab !important;
+  opacity: 1 !important;
+}
+
+.artwork-btn {
+  display: inline-block;
+  right: 0;
+}
+
+@media all and (max-width: 900px)
+{
+  .card-image {
+    display: none;
+  }
+
+  #artwork-resume {
+    width: 100%;
+  }
+
+  #artwork-info {
+    margin-left: 0;
+    width: 100%;
+  }
+}
+
+/* Catalog */
+.pagination li.active {
+  background-color: #3949ab;
+}
+
+#catalog-wrapper {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.artwork-card {
+  flex-basis: 24%;
+  height: 350px;
+  margin: 5px 1px 5px 1px;
+}
+
+.artwork-card .cover-carousel {
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.artwork-card .cover-carousel .exemplaire-picture {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.5s;
+  width: 100%;
+  height: 0%;
+}
+
+.show-picture {
+  height: 100% !important;
+  opacity: 1 !important;
+}
+
+.artwork-card .card-title {
+  font-size: 18px;
+  font-weight: 500;
+  z-index: 1000;
+}
+
+.artwork-card .card-action {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: all 0.2s;
+  z-index: 999;
+  width: 100%;
+  height: 0%;
+}
+
+.show-action {
+  height: 16% !important;
+  opacity: 1 !important;
+}
+
+.artwork-card .card-action .author-action a {
+  margin: 0;
+}
+
+.artwork-card .artwork-resume {
+  height: 150px;
+  overflow: hidden;
+}
+
+.artwork-card .artwork-author {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-50%);
+}
+
+@media all and (max-width: 900px)
+{
+  .artwork-card {
+    flex-basis: 49%;
+    height: 550px;
+    margin: 5px 1px 5px 1px;
+  }
+}
+
+@media all and (max-width: 500px)
+{
+  .artwork-card {
+    flex-basis: 49%;
+    height: 300px;
+  }
+}
