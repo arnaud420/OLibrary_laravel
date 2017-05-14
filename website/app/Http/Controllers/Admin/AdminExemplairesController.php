@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Artworks;
 use App\Exemplaires;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,7 @@ class AdminExemplairesController extends Controller
      */
     public function index()
     {
-        return view('back.exemplaires.index');
+        //
     }
 
     /**
@@ -23,9 +24,10 @@ class AdminExemplairesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $artwork = Artworks::findOrFail($id);
+        return view('back.exemplaires.create', compact('artwork'));
     }
 
     /**
@@ -36,7 +38,8 @@ class AdminExemplairesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+        Exemplaires::create($input);
     }
 
     /**
@@ -47,10 +50,7 @@ class AdminExemplairesController extends Controller
      */
     public function show($exemplaire_id, $artwork_id)
     {
-        $exemplaire = Exemplaires::findOrFail($exemplaire_id);
-        $exemplaire->artwork()->get();
-        $artwork = $exemplaire->artwork()->findOrFail($artwork_id);
-        return view('back.exemplaires.show', compact('exemplaire', 'artwork'));
+        //
     }
 
     /**
@@ -82,8 +82,13 @@ class AdminExemplairesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($artwork_id, $exemplaire_id)
     {
-        //
+        $artwork = Artworks::findOrFail($artwork_id);
+        $count = $artwork->exemplaires()->destroy($exemplaire_id);
+        if($count == 1)
+        {
+            return redirect()->back();
+        }
     }
 }

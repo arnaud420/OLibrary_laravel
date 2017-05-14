@@ -30,21 +30,19 @@
                                 @elseif(count($artwork->exemplaires) == 1)
                                     <p class="center paddingBot" style="text-decoration: underline;">L'oeuvre possède {{count($artwork->exemplaires)}} exemplaire.</p>
                                 @else
-                                    <p>L'oeuvre n'a pas d'exemplaire disponible.</p>
+                                    <p class="center paddingBot">L'oeuvre n'a pas d'exemplaire disponible.</p>
                                 @endif
+                                    <p>
+                                        Ajouter un exemplaire<a href="{{route('adminartworks.exemplaires.create', $artwork->id)}}"><i class="material-icons green-text">add</i></a>
+                                    </p>
+
                             @foreach($artwork->exemplaires as $exemplaire)
                                     <p>{{$exemplaire->exemplaire_name}} |
-                                        <span>Quantité restante : {{$exemplaire->exemplaire_quantity}}</span>
+                                        <span>Quantité restante : {{$exemplaire->exemplaire_quantity}}<a href=""><i class="material-icons red-text">delete</i></a></span>
                                     </p>
                                 @endforeach
                             </div>
                         </div>
-                    <div class="row">
-                        <div class="col s12">
-                            <p><a class="waves-effect waves-light btn red left" href="{{route('adminartworks.edit', $artwork->id)}}">Modifier</a></p>
-                            <p><a class="waves-effect waves-light btn green right" href="##">Exemplaires</a></p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

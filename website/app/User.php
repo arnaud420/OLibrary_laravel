@@ -26,6 +26,7 @@ class User extends Authenticatable
     'address',
     'postal_code',
     'city',
+    'is_admin',
     'created_at',
     'updated_at'
   ];

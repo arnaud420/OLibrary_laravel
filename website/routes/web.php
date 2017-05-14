@@ -43,6 +43,7 @@ Route::group(['middleware' => 'isLogged'], function() {
             Route::post('admin/family-authoritie/create', ['uses' => 'Admin\AdminFamilyAuthoritiesController@store', 'as' => 'familyauthoritie.store']);
             Route::get('admin/type/create', ['uses' => 'Admin\AdminTypesController@create', 'as' => 'type.create']);
             Route::post('admin/type/create', ['uses' => 'Admin\AdminTypesController@store', 'as' => 'type.store']);
+            Route::resource('admin/artworks.exemplaires', 'Admin\AdminExemplairesController');
         });
     });
 });
