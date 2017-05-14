@@ -22,7 +22,7 @@ class ArtworkController extends Controller
       $artworks = Artworks::paginate(16);
       $artworks->load('author');
       $artworks->load('exemplaires');
-      return view('layouts.catalog', ['artworks' => $artworks]);
+      return view('artworks.catalog', ['artworks' => $artworks]);
     }
 
     public function borrow(Request $request, $id) {
@@ -44,13 +44,15 @@ class ArtworkController extends Controller
             ]);
           }
         }
+
         if ($exemplaireToBorrow->exemplaire_quantity <= count($exemplaireToBorrow->users)) {
+
           return Response()->json([
             'message' => 'Plus d\'exemplaires disponibles.'
           ]);
         } else {
-          $user->exemplaires()->attach($exemplaireId);
 
+          $user->exemplaires()->attach($exemplaireId);
           return Response()->json([
             'message' => 'Emprunt reussi.',
           ]);
@@ -58,6 +60,12 @@ class ArtworkController extends Controller
       }
     }
 
+    /**
+     * Get artworks + Exemplaires in ajax
+     *
+     * @param  Request $request
+     * @return json
+     */
     public function getExemplaires(Request $request) {
       if ($request->ajax()) {
 
@@ -84,12 +92,27 @@ class ArtworkController extends Controller
         return view('artworks.show', ['artwork' => $artwork]);
     }
 
+    public function searchByAuthor(Request $request) {
+      return view('artworks.searchResults', ['results' => null]);
+    }
+
+    /**
+     * search in all Artworks
+     *
+     * @param  Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function searchAll(Request $request) {
       $value = $request->input('value');
       $results = Artworks::
         where('artwork_title', 'LIKE', '%'.$value.'%')
         ->orWhere('resume', 'LIKE', '%'.$value.'%')
         ->get();
+      $results->load('author');
+      if (count($results) == 0) {
+        $results = null;
+      }
       return view('artworks.searchResults', ['results' => $results]);
     }
+
 }

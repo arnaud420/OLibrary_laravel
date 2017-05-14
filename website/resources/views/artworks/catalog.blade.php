@@ -4,6 +4,7 @@
 
 @section('styles')
   <link rel="stylesheet" href="/css/artworks.css">
+  <link rel="stylesheet" href="/css/search.css">
 @endsection
 
 @section('content')
@@ -17,7 +18,7 @@
               <input id="search-input" type="text" class="validate" name="value">
               <label for="search-input">Rechercher parmi les oeuvres</label>
             </div>
-            <button type="submit" class="btn btn-primary indigo darken-1 col s3">Rechercher</button>
+            <button id="search-btn" type="submit" class="btn btn-primary indigo darken-1 col s3">Rechercher</button>
           </div>
         </form>
       </div>

@@ -1,3 +1,4 @@
+/* Show Profile */
 #list-info-wrapper {
   font-size: 25px;
   margin: 10% 0 10% 0;
@@ -14,17 +15,36 @@
 }
 
 .info-item {
-  color: black; !important;
+  color: black !important;
   font-family: 'Roboto';
 }
 
 .right {
-  text-align: right; !important;
+  text-align: right !important;
 }
 
 @media all and (max-width: 500px) 
 {
   .right {
-    text-align: center; !important
+    text-align: center !important;
   }
+}
+
+/* Edit Profile */
+
+#edit-profile-form {
+  margin: 10% 0 10% 0;
+}
+
+#edit-profile-form .input-field {
+  margin: 2% 0 2% 0;
+}
+
+#edit-profile-form label {
+  font-family: 'Righteous', cursive;
+  font-size: 20px;
+}
+
+#edit-profile-form input {
+  font-size: 30px;
 }

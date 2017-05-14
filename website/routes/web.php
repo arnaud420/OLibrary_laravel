@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', 'LoginController@index');
 //Routes artwork
 Route::resource('artworks', 'ArtworkController');
 Route::get('/artworks/{id}/exemplaires', 'ArtworkController@getExemplaires');
@@ -20,6 +19,7 @@ Route::get('/user/borrows', 'UserController@borrows');
 Route::post('/artworks/search', 'ArtworkController@searchAll');
 
 Auth::routes();
+Route::get('/', 'LoginController@index');
 Route::get('/logout', 'LoginController@logout');
 
 //Routes user
