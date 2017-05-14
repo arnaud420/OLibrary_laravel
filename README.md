@@ -19,7 +19,7 @@ Nous devions réaliser un gestionnaire de fond documentaire en utilisant php.
 
 ```
 git clone https://github.com/TonyChG/OLibrary
-cd OLibrary
+cd OLibrary/website
 composer update
 ```
 
