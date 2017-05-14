@@ -37,6 +37,14 @@ class DatabaseSeeder extends Seeder
 
     $users = factory(App\User::class, 10)->create();
 
+    DB::table('users')->insert([
+      'first_name' => 'admin',
+      'last_name' => 'admin',
+      'email' => 'admin@admin.com',
+      'password' => bcrypt('password'),
+      'is_admin' => true
+    ]);
+
     foreach($types as $type) {
       DB::table('types')->insert([
         'type_name' => $type

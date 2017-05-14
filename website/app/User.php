@@ -26,7 +26,6 @@ class User extends Authenticatable
     'address',
     'postal_code',
     'city',
-    'picture_path',
     'created_at',
     'updated_at'
   ];
@@ -49,8 +48,8 @@ class User extends Authenticatable
     return $this->belongsToMany(Exemplaires::class)->withTimestamps();
   }
 
-  public function setPasswordAttribute($value)
-  {
-      $this->attributes["password"] = bcrypt($value);
-  }
+  // public function setPasswordAttribute($value)
+  // {
+  //     $this->attributes["password"] = bcrypt($value);
+  // }
 }

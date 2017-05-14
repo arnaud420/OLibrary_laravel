@@ -23,8 +23,7 @@ class CreateUsersTable extends Migration
       $table->string('address')->nullable();
       $table->string('postal_code')->nullable();
       $table->string('city')->nullable();
-      $table->string('picture_path')->nullable()->default('/uploads/default.png');
-      $table->boolean('admin')->default(false);
+      $table->boolean('is_admin')->default(false);
       $table->rememberToken();
       $table->timestamps();
     });
@@ -45,6 +44,6 @@ class CreateUsersTable extends Migration
   public function down()
   {
     Schema::dropIfExists('users');
-    Schema::dropIfExists('user_exemplaire');
+    Schema::dropIfExists('exemplaires_user');
   }
 }
