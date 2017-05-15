@@ -38,7 +38,7 @@
 
                             @foreach($artwork->exemplaires as $exemplaire)
                                     <p>{{$exemplaire->exemplaire_name}} |
-                                        <span>Quantité restante : {{$exemplaire->exemplaire_quantity}}<a href=""><i class="material-icons red-text">delete</i></a></span>
+                                        <span>Quantité restante : {{$exemplaire->exemplaire_quantity}}</span>
                                     </p>
                                 @endforeach
                             </div>
