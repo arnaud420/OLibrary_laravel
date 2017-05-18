@@ -68,6 +68,6 @@ php artisan serv
 - Le serveur est lancée sur http://127.0.0.1:8000
 - Compte de Test : 
 ```
-Email : admin@admin.fr
+Email : admin@admin.com
 Mot de passe : password
 ```
