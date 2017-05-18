@@ -46,11 +46,11 @@
                 </div>
 
                 <div class="input-field col s12">
-                    <select name="admin">
+                    <select name="is_admin">
                         <option value="0">Non</option>
                         <option value="1">Oui</option>
                     </select>
-                    <label for="admin">Admin</label>
+                    <label for="is_admin">Admin</label>
                 </div>
 
                 <div class="col s12">

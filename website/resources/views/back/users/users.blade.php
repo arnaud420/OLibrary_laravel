@@ -15,18 +15,6 @@
         </div>
 
         <div class="row">
-            <div class="input-field col s12 col m3">
-                <select>
-                    <option value="" disabled selected>Trier par</option>
-                    <option value="1">ID</option>
-                    <option value="2">Nom</option>
-                    <option value="3">Prenom</option>
-                    <option value="4">Email</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="row">
             <div class="col s12">
                 <table class="striped centered responsive-table">
                     <thead>

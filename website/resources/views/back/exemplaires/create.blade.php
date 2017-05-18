@@ -27,6 +27,11 @@
                 </div>
 
                 <div class="col s12">
+                    <input type="file" name="exemplaire_picture_path">
+                    <label>Upload image</label>
+                </div>
+
+                <div class="col s12">
                     <input type="submit" value="Ajouter" class="waves-effect waves-light btn-large green accent-3 right">
                 </div>
 

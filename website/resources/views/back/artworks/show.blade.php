@@ -20,7 +20,7 @@
                             <p>Auteur : {{$artwork->author->last_name}}, {{$artwork->author->first_name}} </p>
                             <p>Date : {{$artwork->artwork_date}}</p>
                             <p>Editeur : {{$artwork->authority->authority_name}}</p>
-                            <p>Genre : {{$artwork->type->type_name}}, {{$artwork->type->type_theme}}</p>
+                            <p>Genre : {{$artwork->type->type_name}}</p>
                             <p class="paddingBot">Collection : {{$artwork->collection}}</p>
 
                             <div class="divider"></div>
@@ -38,7 +38,7 @@
 
                             @foreach($artwork->exemplaires as $exemplaire)
                                     <p>{{$exemplaire->exemplaire_name}} |
-                                        <span>Quantité restante : {{$exemplaire->exemplaire_quantity}}<a href=""><i class="material-icons red-text">delete</i></a></span>
+                                        <span>Quantité restante : {{$exemplaire->exemplaire_quantity}}</span>
                                     </p>
                                 @endforeach
                             </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Artworks;
 use App\Exemplaires;
+use Intervention\Image\Facades\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -36,10 +37,25 @@ class AdminExemplairesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $input = $request->all();
-        Exemplaires::create($input);
+        if ($request->hasFile('exemplaire_picture_path'))
+        {
+            $image = $request->file('exemplaire_picture_path');
+            $filename = '/uploads/' . time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(400,611)->save(public_path($filename));
+            $exemplaire = new Exemplaires;
+            $artworks_id = Artworks::find($request->get('artworks_id'));
+
+            $exemplaire->exemplaire_name = $request->get('exemplaire_name');
+            $exemplaire->exemplaire_quantity = $request->get('exemplaire_quantity');
+            $exemplaire->exemplaire_picture_path = $filename;
+            $exemplaire->artwork()->associate($artworks_id);
+            $exemplaire->save();
+
+            $artwork = Artworks::findOrFail($id);
+            return redirect(route("adminartworks.show", $id))->withOk("success", "l'utilisateur a ete cree");
+        }
     }
 
     /**
@@ -82,13 +98,8 @@ class AdminExemplairesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($artwork_id, $exemplaire_id)
+    public function destroy($id)
     {
-        $artwork = Artworks::findOrFail($artwork_id);
-        $count = $artwork->exemplaires()->destroy($exemplaire_id);
-        if($count == 1)
-        {
-            return redirect()->back();
-        }
+        //
     }
 }
